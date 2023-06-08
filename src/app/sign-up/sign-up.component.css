@@ -1,0 +1,136 @@
+.maincontainer{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto; 
+    width: 70%;
+  }
+
+  .userDetailsContainer {
+    background-color: #F2F0F0;
+    flex: 1; 
+    padding: 20px; 
+    width: 50%;
+    text-align: center;
+    
+  }
+  h4{
+    margin-bottom: 22px;
+  }
+
+  .userDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    
+  }
+  #userName{
+ padding:12.5px;
+ width:65%;
+ border-radius: 15px;
+ text-align: center;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  #email{
+    padding:12.5px;
+    width:65%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  #password{
+    padding:12.5px;
+    width:65%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+  }
+  #confirmPassword{
+    padding:12.5px;
+    width:65%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+  }
+
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #C2BCBC;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    color: #000000;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="password"]:hover {
+      background-color: #ECE9E9;
+    }
+
+
+  .btn{
+    margin-top: 30px;
+    border-radius: 15px;
+    padding:12.5px;
+    width:32.5%;
+    color: #ffffff;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover{
+    background-color: #333333;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  p{
+    margin-top: 35px;
+  }
+  
+  .gif {
+    background-color: #ffffff;
+    width: 50%;
+  }
+
+
+
+
+  @media screen and (max-width: 748px) {
+
+    .gif{
+  display: none;
+}
+
+
+input[type="text"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    
+    font-size: 13.5px;
+  }
+
+  }
+
+
+
