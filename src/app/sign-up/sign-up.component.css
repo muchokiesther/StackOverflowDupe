@@ -113,7 +113,13 @@
     width: 50%;
   }
 
+.error{
+  color:red;
+}
 
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
 
 
   @media screen and (max-width: 748px) {
@@ -122,13 +128,36 @@
   display: none;
 }
 
-
 input[type="text"]::placeholder,
   input[type="email"]::placeholder,
   input[type="password"]::placeholder {
     
     font-size: 13.5px;
   }
+  .btn{
+    margin-top: 30px;
+    border-radius: 15px;
+    padding:4.5%;
+    width:40.5%;
+  }
+
+  #userName{
+    width:85%;
+     }
+
+     #email{
+       width:85%;
+     }
+
+     #password{
+       width:85%;
+     
+     }
+
+     #confirmPassword{
+       width:85%;
+     }
+
 
   }
 

@@ -10,7 +10,8 @@
     background-color: #f2f2f2;
     padding: 20px;
     width:50%;
-    height: fit-content
+    height: fit-content;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   }
 
@@ -76,4 +77,56 @@ gap:20px;
   p{
     margin-top: 35px;
     margin-bottom: 25px;
+  }
+  
+  .error{
+    color:red;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+
+  @media screen and (max-width:750px){
+    #email{
+      padding:7%;
+      width:90%;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    #password{
+      padding:7%;
+      width:90%;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder {
+      color: #C2BCBC;
+    }
+   
+    input[type="email"],
+    input[type="password"] {
+      color: #000000;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+  
+      input[type="email"]:hover,
+      input[type="password"]:hover {
+        background-color: #ECE9E9;
+      }
+      .btn{
+        margin-top: 30px;
+        border-radius: 15px;
+        padding:7%;
+        width:50.5%;
+      }
+      
+  
   }

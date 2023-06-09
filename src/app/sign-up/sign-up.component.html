@@ -3,14 +3,20 @@
 <div class="container">
     <div class="userDetailsContainer">
         <h4>Welcome, Register with us <br>Today!.</h4>
-        <form class="userDetails">
-            <input type="text" id="userName" name="username" placeholder="USERNAME">
-            <input type="email" id="email" name="email" placeholder="EMAIL">
-            <input type="password" id="password" name="password" PLACEHOLDER="PASSWORD">
-            <input type="password" id="confirmPassword" name="confirmPassword" PLACEHOLDER="CONFIRM PASSWORD">
-            <button type="sublit" class="btn">Sign Up</button>
+        <form class="userDetails" (ngSubmit)="onSubmit()" [formGroup]="form">
+            <input type="text" id="userName" name="username" placeholder="USERNAME" formControlName="userName">
+            <p class="error" *ngIf="!form.get('userName')?.valid && form.get ('userName')?.touched">*Username is required</p>
+            <input type="email" id="email" name="email" placeholder="EMAIL" formControlName="email">
+            <p class="error" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">*Email is required</p>
+            <input type="password" id="password" name="password" PLACEHOLDER="PASSWORD" formControlName="password">
+            <p class="error" *ngIf="!form.get('password')?.valid && form.get('password')?.touched">*password is required</p>
+            <input type="password" id="confirmPassword" name="confirmPassword" PLACEHOLDER="CONFIRM PASSWORD" formControlName="confirmPassword">
+            <p class="error" *ngIf="form.hasError('passwordsDoNotMatch') && form.get('confirmPassword')?.touched">
+                Passwords do not match
+              </p>
+            <button type="submit" class="btn">Sign Up</button>
         </form>
-        <p>Already have an account? log in here</p>
+        <p> <a [routerLink]="['/login']">Already have an account? log in here</a></p>
     </div>
     <div class="gif">
         <img src="../../assets/signup.gif" alt="Sign Up Gif">

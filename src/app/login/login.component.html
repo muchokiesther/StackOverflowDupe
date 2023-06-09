@@ -1,12 +1,14 @@
 <div class="maincontainer">
     <div class="container">
         <div class="userDetailsContainer">
-            <form class="userDetails">
+            <form class="userDetails" (ngSubmit)="onSubmit()" [formGroup]="form">
                 <h4>Welcome Back!</h4>
-                <input type="email" id="email" name="email" placeholder="Email">
-                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="email" id="email" formControlName="email" placeholder="Email" required>
+                <p class="error" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">*Email is required</p>
+                <input type="password" id="password" formControlName="password" placeholder="Password" >
+                <p class="error" *ngIf="!form.get('password')?.valid && form.get('password')?.touched">*password is required</p>
                 <button type="submit" class ="btn">Log In</button>
-                <p>Dont have an account? Register here:</p>
+                <p><a [routerLink]="['/signup']">Dont have an account? Register here</a></p>
             </form>
             
         </div>

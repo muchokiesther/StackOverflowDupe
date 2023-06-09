@@ -1,20 +1,25 @@
 <div class="maincontainer">
-    <img class ="logo" src="../../assets/logo.png">
-    <div class="container">
-      
-        <div class="topContainer">
-        </div>
-        <div class ="content">
-        <div class="img">
-            <img src="../../assets/landingpgimg.svg" >
-        </div>
-        <div class="text">
-            <p>Where curiosity meets collaboration.<br>
-                Discover solutions, connect with experts.</p>
-                <button class="btn" type="submit">Join Us</button>
-        </div>
+  <div class="header">
+    <img class="logo" src="../../assets/logo.png" />
+    <div class="buttonContainer">
+      <button class="loginBtn" [routerLink]="['/login']">Log In</button>
+      <button class="signupBtn" [routerLink]="['/signup']">Sign Up</button>
     </div>
-        <div class="btmContainer">
-        </div>
+  </div>
+  <div class="container">
+    <div class="topContainer"></div>
+    <div class="content">
+      <div class="img">
+        <img src="../../assets/landingpgimg.svg" />
+      </div>
+      <div class="text">
+        <p>
+          Where curiosity meets collaboration.<br />Discover solutions, connect
+          with experts.
+        </p>
+        <button class="btn" type="submit" [routerLink]="['/signup']">Join Us</button>
+      </div>
     </div>
+    <div class="btmContainer"></div>
+  </div>
 </div>
