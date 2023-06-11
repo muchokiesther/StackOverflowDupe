@@ -1,28 +1,32 @@
-
-  <h1>Questions and Answers PAGE</h1>
+<div class="maincontainer">
+  <h3>See Questions and Answers </h3>
 
   <!-- Question -->
-  <div>
+  <div class="questiondetails">
     <h2>How to remove the box around the link element?</h2>
     <p>I'm new to HTML and CSS. I would like to have an invisible link, but I don't want to set the style of 'a' tags directly. Instead, I would like to set the style of its parent element so that it becomes invisible.</p>
-    <p>This is what I tried:</p>
+
+   
    
   </div>
 
   <!-- Answers -->
-  <h2>Answers:</h2>
-  <div>
+  <div class="random">
+  <h2 class="section">Answers:</h2>
+  <div class="section2">
     <p>The 'box' around your link has a default outline property defined. Be sure to include <code>outline: none;</code> to any element or pseudo-selector that includes this treatment.</p>
   </div>
-  <div>
+</div>
+  <div CLASS="commentsection">
     <input type="text" id="comment" name="comment" placeholder="Enter your comment here" required>
   </div>
 
   <!-- Post your answer -->
-  <h2>Post Your Answer</h2>
-  <form >
+  <h2 class="answertitle">Post Your Answer</h2>
+  <form id="textarea">
     <textarea name="answer"  placeholder="Type your answer here" required></textarea>
     <br>
     <button type="submit">POST YOUR ANSWER</button>
   </form>
 
+</div>
