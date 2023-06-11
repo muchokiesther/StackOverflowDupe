@@ -1,0 +1,217 @@
+.maincontainer{
+  background-color: #f5e9ef;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "one one one"
+    "four five six"
+    "four five seven";
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin: auto;
+  max-width: 1200px;
+  padding: 15px;
+  margin-top: 10px;
+}
+.logo img{
+  width:10rem;
+  height:5rem;
+ margin-right: 2.5rem;
+
+}
+
+
+
+
+.three {
+  background-color: #f5e9ef;
+  grid-area: one;
+
+}
+.three header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.four {
+  background-color: #ffffff;
+  grid-area: four;
+
+}
+
+.five {
+  background-color: #f5e9ef;
+  grid-area: five;
+  width:600px;
+
+}
+
+.six {
+  background-color: #f5e9ef;
+  grid-area: six;  
+  padding:25px;
+}
+
+.seven {
+  background-color: #ffffff;
+  grid-area: seven;
+  padding-left:50px;
+  padding-right: 50px;
+}
+
+
+.watched-tags-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.watched-tags-button{
+padding: 10px;
+}
+
+.tags {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.tags button {
+  width: 100px;
+  height: 35px;
+  padding: 2.5px;
+  font-size: 16px;
+
+}
+
+.tag1 {
+  grid-area: html;
+}
+
+.tag2 {
+  grid-area: css;
+}
+
+.tag3 {
+  grid-area: js;
+}
+
+.tag4 {
+  grid-area: sass;
+}
+
+/* Define grid areas for the buttons */
+.tags {
+  grid-template-areas:
+    "html css"
+    "js sass";
+}
+
+/* Assign grid areas to specific buttons */
+.tag1 {
+  grid-area: html;
+  background-color:#D9D9D9;
+}
+
+.tag2 {
+  grid-area: css;
+   background-color:#D9D9D9;
+}
+
+.tag3 {
+  grid-area: js;
+   background-color:#D9D9D9;
+}
+
+.tag4 {
+  grid-area: sass;
+   background-color:#D9D9D9;
+}
+
+
+.votes {
+  margin-left: 27rem;
+}
+
+.view-more {
+  margin-left: 30rem; /* Push the view more to the right side */
+}
+.leftbtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.question{
+background-color: #D9D9D9;
+padding:20px;height: min-content;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+input[type="search"] {
+  /* Your existing styles */
+  width: 40rem;
+  height: 42px;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  animation: floatAnimation 2s ease-in-out ;
+  text-align: center;
+}
+
+.profile button {
+  padding: 10px 20px; /* Adjust the padding values as desired */
+  border-radius: 10px;
+}
+.askQuestion{
+  margin-left: 25rem;
+  margin-bottom: 2rem;
+  padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 12rem;
+  height: 42px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: black;
+}
+.Qtag{
+padding: 5.5px;
+}
+
+.homebtn{
+  padding:10px;
+  width:50%;
+  margin-bottom: 10px;
+}
+
+.viewquesbtn{
+  padding:10px;
+}
+.viewtagsbtn{
+  padding:10px;
+  width:7.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f5e9ef;
+}

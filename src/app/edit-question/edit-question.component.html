@@ -1,0 +1,17 @@
+<div class="container">
+
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <h3>EDIT QUESTION</h3>
+        <input type="title" id="title" name="titl" placeholder="Type your new title?" ngModel required
+        #title="ngModel">
+    <p class="error" *ngIf="!title.value && title.touched">New title is required*</p>
+        <input type="text" id="username" name="username" placeholder="EXTRA NEW DESCRIPTIVE" ngModel required
+            #username="ngModel">
+        <p class="error" *ngIf="!username.value && username.touched">Descriptive is required*</p>
+        <input type="tag" id="tag" name="tag" placeholder="ADD TAG" ngModel required email
+            #tag="ngModel">
+        <p class="error" *ngIf="!tag.value && tag.touched">Email is required*</p>
+       
+        <button type="submit" class="btn">RE-SUBMIT</button>
+    </form>
+</div>
