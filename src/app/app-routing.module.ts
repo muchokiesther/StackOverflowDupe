@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -9,6 +9,9 @@ import { TagsComponent } from './tags/tags.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AskQuestionPageComponent } from './ask-question-page/ask-question-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { QandaPageComponent } from './qanda-page/qanda-page.component';
+import { AdminDashboardUsersComponent } from './admin-dashboard-users/admin-dashboard-users.component';
+import { AdminDashboardQuestionsComponent } from './admin-dashboard-questions/admin-dashboard-questions.component';
 
 const routes: Routes = [
  {path:'',component:LandingPageComponent},
@@ -21,7 +24,10 @@ const routes: Routes = [
  {path:'tags',component:TagsComponent},
  {path:'forgotpassword',component:ForgotPasswordComponent},
  {path:'askquestion',component:AskQuestionPageComponent},
- {path:'resetpassword',component:ResetPasswordComponent}
+ {path:'resetpassword',component:ResetPasswordComponent},
+ {path:'q&a',component:QandaPageComponent},
+ {path:'adminquestions',component:AdminDashboardUsersComponent},
+ {path:'adminusers',component:AdminDashboardQuestionsComponent} 
  
 ];
 

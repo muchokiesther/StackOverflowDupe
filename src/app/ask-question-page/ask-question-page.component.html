@@ -1,1 +1,29 @@
-<p>ask-question-page works!</p>
+<div>
+<form>
+    <h2>Ask a Question</h2>
+    <div class="questionarea">
+        <p>Writing a good question
+            You're ready to ask a programming-related question and this form will help guide you through the process.
+            Looking to ask a non-programming question? See the topics here to find a relevant site.
+            Steps
+            Summarize your problem in a one-line title.
+            Describe your problem in more detail.
+            Describe what you tried and what you expected to happen.
+            Add “tags” which help surface your question to members of the community.
+            Review your question and post it to the site.</p>
+    </div>
+    <div class="section">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="GIVE SOME SHORT  TITLE TO YOUR QUESTION " required>
+
+        <label for="problem-details">What are the details of your problem?:</label>
+        <textarea id="problem-details" name="problem-details" placeholder="Describe your problem in more detail"
+            required></textarea>
+
+        <label for="tags">ADD TAG</label>
+        <input type="text" id="tags" name="tags" placeholder="TYPE YOUR TAG HERE FOR EXAMPLE HTML,CSS" required>
+
+        <button type="submit">Post Your Question</button>
+    </div>
+</form>
+</div>

@@ -11,6 +11,9 @@ import { TagsComponent } from './tags/tags.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AskQuestionPageComponent } from './ask-question-page/ask-question-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { QandaPageComponent } from './qanda-page/qanda-page.component';
+import { AdminDashboardQuestionsComponent } from './admin-dashboard-questions/admin-dashboard-questions.component';
+import { AdminDashboardUsersComponent } from './admin-dashboard-users/admin-dashboard-users.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
    ForgotPasswordComponent,
    AskQuestionPageComponent,
    ResetPasswordComponent,
+   QandaPageComponent,
+   AdminDashboardQuestionsComponent,
+   AdminDashboardUsersComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
