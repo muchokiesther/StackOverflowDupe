@@ -5,6 +5,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { TagsComponent } from './tags/tags.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AskQuestionPageComponent } from './ask-question-page/ask-question-page.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
  {path:'',component:LandingPageComponent},
@@ -13,7 +17,11 @@ const routes: Routes = [
  {path:'home',component:HomePageComponent},
  {path:'profile',component:UserProfileComponent},
  {path:'editprofile',component:EditProfileComponent},
- {path:'editquestion',component: EditQuestionComponent}
+ {path:'editquestion',component: EditQuestionComponent},
+ {path:'tags',component:TagsComponent},
+ {path:'forgotpassword',component:ForgotPasswordComponent},
+ {path:'askquestion',component:AskQuestionPageComponent},
+ {path:'resetpassword',component:ResetPasswordComponent}
  
 ];
 

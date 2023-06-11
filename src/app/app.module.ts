@@ -7,6 +7,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { TagsComponent } from './tags/tags.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AskQuestionPageComponent } from './ask-question-page/ask-question-page.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
     UserProfileComponent,
     EditProfileComponent,
    EditQuestionComponent,
+   TagsComponent,
+   ForgotPasswordComponent,
+   AskQuestionPageComponent,
+   ResetPasswordComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

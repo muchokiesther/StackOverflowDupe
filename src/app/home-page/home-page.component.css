@@ -1,6 +1,13 @@
 .maincontainer{
   background-color: #f5e9ef;
+  height: 100vh;
+    width: 100vw;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
 
 .container {
   display: grid;
@@ -23,8 +30,6 @@
 }
 
 
-
-
 .three {
   background-color: #f5e9ef;
   grid-area: one;
@@ -39,6 +44,7 @@
 .four {
   background-color: #ffffff;
   grid-area: four;
+  height:70vh;
 
 }
 
@@ -175,6 +181,7 @@ input[type="search"] {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   animation: floatAnimation 2s ease-in-out ;
   text-align: center;
+  border: none;
 }
 
 .profile button {
