@@ -10,21 +10,21 @@
           <input type="search" id="searchbar" name="myInput" placeholder="Search">
         </div>
         <div class="profile">
-          <button>PROFILE</button>
+          <button [routerLink]="['/profile']">PROFILE</button>
         </div>
       </header>
     </div>
     <div class="four">
       <div class="leftbtn">
-        <button class="homebtn">HOME</button> <br>
-        <button class="viewquesbtn">View Questions</button><br>
-        <button class="viewtagsbtn">View tags</button><br>
+        <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
+        <button class="viewquesbtn" [routerLink]="['/q&a']">View Questions</button><br>
+        <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
       </div>
     </div>
     <div class="five">
       <div class="question-container">
         <p>QUESTIONS FILTERED FROM THE TOP</p>
-        <button class="askQuestion">ASK A QUESTION</button>
+        <button class="askQuestion" [routerLink]="['/askquestion']">ASK A QUESTION</button>
 
         <div class="question">
           <div class="question-info">
@@ -36,9 +36,10 @@
               <button class="vote-button">▲</button>
               <button class="vote-button">▼</button>
               <span class="vote-count">0 votes</span>
+              <fa-icon [icon]="faTrash"></fa-icon>
 
             </div>
-            <p class="view-more">View more</p>
+            <p class="view-more" [routerLink]="['/q&a']">View more</p>
           </div>
         </div>
 
@@ -46,7 +47,7 @@
     </div>
     <div class="six">
       <div class="watched-tags-container">
-        <button class="watched-tags-button">WATCHED TAGS</button> <br>
+        <button class="watched-tags-button" [routerLink]="['/tags']">VIEW SUCH TAGS</button> <br>
         <div class="tags">
           <button class="tag1">HTML</button>
           <button class="tag2">CSS</button>

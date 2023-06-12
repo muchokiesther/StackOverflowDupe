@@ -11,7 +11,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  constructor() { }
+  constructor(private router:Router) { }
   form!: FormGroup;
 
   ngOnInit(): void {
@@ -33,7 +33,12 @@ export class SignUpComponent implements OnInit {
     return password === confirmPassword ? null : { 'passwordsDoNotMatch': true };
   }
 
-  onSubmit() {
-    console.log(this.form.value);
-  }
+  onSubmit(){
+    if(!this.form.invalid){
+      console.log(this.form.value)
+      this.router.navigate(['/login'])
+    }else{
+      console.log("invalid")
+    }
+    }
 }

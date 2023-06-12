@@ -1,33 +1,34 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { EditQuestionComponent } from './edit-question/edit-question.component';
-import { TagsComponent } from './tags/tags.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AskQuestionPageComponent } from './ask-question-page/ask-question-page.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { QandaPageComponent } from './qanda-page/qanda-page.component';
-import { AdminDashboardUsersComponent } from './admin-dashboard-users/admin-dashboard-users.component';
-import { AdminDashboardQuestionsComponent } from './admin-dashboard-questions/admin-dashboard-questions.component';
 
 const routes: Routes = [
- {path:'',component:LandingPageComponent},
+ {path:'',loadComponent:()=> import("./landing-page/landing-page.component").then(c=>c.LandingPageComponent)},
+
  {path:'signup',loadComponent:()=> import("./sign-up/sign-up.component").then(c => c.SignUpComponent)},
+
  {path:'login',loadComponent:()=> import("./login/login.component").then(c=>c.LoginComponent)},
- {path:'home',component:HomePageComponent},
- {path:'profile',component:UserProfileComponent},
- {path:'editprofile',component:EditProfileComponent},
- {path:'editquestion',component: EditQuestionComponent},
- {path:'tags',component:TagsComponent},
- {path:'forgotpassword',component:ForgotPasswordComponent},
- {path:'askquestion',component:AskQuestionPageComponent},
- {path:'resetpassword',component:ResetPasswordComponent},
- {path:'q&a',component:QandaPageComponent},
- {path:'adminquestions',component:AdminDashboardUsersComponent},
- {path:'adminusers',component:AdminDashboardQuestionsComponent} 
+
+ {path:'home',loadComponent:()=> import("./home-page/home-page.component").then(c=>c.HomePageComponent)},
+
+ {path:'profile',loadComponent:()=> import("./user-profile/user-profile.component").then(c=>c.UserProfileComponent)},
+
+ {path:'editprofile',loadComponent:()=> import("./edit-profile/edit-profile.component").then(c=>c.EditProfileComponent)},
+
+ {path:'editquestion',loadComponent:()=> import("./edit-question/edit-question.component").then(c=>c.EditQuestionComponent)},
+
+ {path:'tags',loadComponent:()=> import("./tags/tags.component").then(c=>c.TagsComponent)},
+
+ {path:'forgotpassword',loadComponent:()=> import("./forgot-password/forgot-password.component").then(c=>c.ForgotPasswordComponent)},
+
+ {path:'askquestion',loadComponent:()=> import("./ask-question-page/ask-question-page.component").then(c=>c.AskQuestionPageComponent)},
+
+ {path:'resetpassword',loadComponent:()=>import("./reset-password/reset-password.component").then(c=>c.ResetPasswordComponent)},
+
+ {path:'q&a',loadComponent:()=>import("./qanda-page/qanda-page.component").then(c=>c.QandaPageComponent)},
+
+ {path:'adminquestions',loadComponent:()=>import("./admin-dashboard-questions/admin-dashboard-questions.component").then(c=>c.AdminDashboardQuestionsComponent)},
+ 
+ {path:'adminusers',loadComponent:()=>import("./admin-dashboard-users/admin-dashboard-users.component").then(c=>c.AdminDashboardUsersComponent)} 
  
 ];
 

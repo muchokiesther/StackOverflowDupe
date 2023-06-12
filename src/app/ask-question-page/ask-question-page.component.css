@@ -63,3 +63,15 @@ button[type="submit"]:hover {
     height: 10rem;
     border-color: #BABABA;
 }
+
+@media screen and (max-width: 768px) {
+    .questionarea {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .questionarea {
+      width: 100%;
+    }
+  }

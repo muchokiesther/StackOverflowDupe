@@ -9,6 +9,7 @@
                 <p class="error" *ngIf="!form.get('password')?.valid && form.get('password')?.touched">*password is required</p>
                 <button type="submit" class ="btn">Log In</button>
                 <p><a [routerLink]="['/signup']">Dont have an account? Register here</a></p>
+                <p><a [routerLink]="['/forgotpassword']"> Forgot Password?</a></p>
             </form>
             
         </div>

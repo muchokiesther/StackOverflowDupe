@@ -2,11 +2,9 @@
   background-color: #f5e9ef;
   height: 100vh;
     width: 100vw;
+    margin: 0;
 }
-body {
-  margin: 0;
-  padding: 0;
-}
+
 
 
 .container {
@@ -221,4 +219,60 @@ padding: 5.5px;
 button:hover {
   cursor: pointer;
   background-color: #f5e9ef;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "one one"
+      "two two"
+      "three three"
+      "four four"
+      "five five"
+      "six six"
+      "seven seven";
+    grid-template-columns: 1fr;
+  }
+
+  .logo img {
+    margin-right: 0;
+  }
+
+  .searchbar input[type="search"] {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .profile button {
+    padding: 8px 15px;
+  }
+
+  .leftbtn {
+    padding: 25px;
+  }
+
+  .question-container {
+    width: 100%;
+  }
+
+  .five {
+    width: 100%;
+  }
+
+  .tags {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .askQuestion {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .tag1,
+  .tag2,
+  .tag3,
+  .tag4 {
+    width: 100%;
+  }
 }

@@ -156,4 +156,46 @@
 .posted-questions p{
   margin-left: 12.5px;
 }
-      
+@media (max-width: 768px) {
+  .posted-questions {
+    width: 90vw;
+  }
+
+  #search-input {
+    width: 55%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .question-type,
+  .question-type2 {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 780px) {
+  .posted-questions {
+    padding: 10px;
+  }
+
+  .super {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+  .question-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .question-type,
+  .question-type2 {
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+  }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { ReactiveFormsModule,FormControlName,FormGroup,FormControl,Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  constructor(private router:Router){}
 form!:FormGroup
 ngOnInit(): void {
   this.form = new FormGroup({
@@ -23,6 +24,7 @@ ngOnInit(): void {
 onSubmit(){
 if(!this.form.invalid){
   console.log(this.form.value)
+  this.router.navigate(['/home'])
 }else{
   console.log("invalid")
 }
