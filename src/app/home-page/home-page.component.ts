@@ -13,5 +13,7 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-  faTrash = faTrashCan;
+
+  showSidebar= false;
+
 }

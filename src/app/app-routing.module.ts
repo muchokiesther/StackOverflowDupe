@@ -26,9 +26,9 @@ const routes: Routes = [
 
  {path:'q&a',loadComponent:()=>import("./qanda-page/qanda-page.component").then(c=>c.QandaPageComponent)},
 
- {path:'adminquestions',loadComponent:()=>import("./admin-dashboard-questions/admin-dashboard-questions.component").then(c=>c.AdminDashboardQuestionsComponent)},
+ {path:'adminusers',loadComponent:()=>import("./admin-dashboard-questions/admin-dashboard-questions.component").then(c=>c.AdminDashboardQuestionsComponent)},
  
- {path:'adminusers',loadComponent:()=>import("./admin-dashboard-users/admin-dashboard-users.component").then(c=>c.AdminDashboardUsersComponent)} 
+ {path:'adminquestions',loadComponent:()=>import("./admin-dashboard-users/admin-dashboard-users.component").then(c=>c.AdminDashboardUsersComponent)} 
  
 ];
 

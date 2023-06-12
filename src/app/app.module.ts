@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShortPipe } from './Pipes/short';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShortPipe,
   ],
   imports: [
     BrowserModule,

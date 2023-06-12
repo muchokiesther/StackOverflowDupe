@@ -1,13 +1,18 @@
 <div class="container">
+ 
   <div class="profile-container">
+  
     <div class="profile-info">
       <h2>JOHN DOES</h2>
+ 
       <div class="question-buttons">
         <button class="question-type">Previously asked Questions</button>
         <button class="question-type" (click)="togglePreviouslyAnswered()">Previously answered questions </button>
       </div>
     </div>
     <div class="posted-questions">
+      <button class="edit-profile" [routerLink]="['/editprofile']">EDIT PROFILE</button>
+   
       <h3>Your Posted Questions:</h3>
       <div class="question">
         <p>Why won't image go to code?</p>
@@ -27,5 +32,5 @@
 
     </div>
   </div>
-  <button class="edit-profile" [routerLink]="['/editprofile']">EDIT PROFILE</button>
+
 </div>

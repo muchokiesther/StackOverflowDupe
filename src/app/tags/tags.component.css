@@ -72,3 +72,41 @@ margin-top: 1rem;
     margin-bottom: 10px;
     border: none;
   }
+
+  @media (max-width: 748px) {
+    .maincontainer {
+      max-width: 100%;
+    }
+  
+    
+    
+  
+    .text {
+    font-size: 10px;
+    width:8rem;
+    }
+  
+    .container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    #searchbar {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .filter{
+      display: none;
+    }
+
+    .container1 {
+      background-color: #ffffff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      border-radius: 20px;
+      height:80%;
+      width: 50%;
+      padding:1rem;
+    }
+  
+  }

@@ -17,6 +17,9 @@
     justify-content: center;
     gap: 25px;
   }
+  #text{
+    height: 10rem;
+  }
   
   input {
     padding: 10px;
@@ -51,3 +54,20 @@
     border: 1px solid red;
   }
   
+  @media (max-width: 768px) {
+    input {
+      width: 100%;
+
+    }
+    #text{
+      height: 20rem;
+      text-align: justify;
+    }
+
+  
+  
+  
+    h3 {
+      margin-right: 0;
+    }
+  }

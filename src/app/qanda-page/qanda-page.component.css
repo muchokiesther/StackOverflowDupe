@@ -3,6 +3,9 @@
 .maincontainer{
     background-color:#E2DEDE;
     padding-bottom: 1rem;
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 
@@ -15,6 +18,7 @@ h3 {
   width: 70rem;
   margin: 0 auto;
   text-align: center;
+padding-bottom: 30px;
 }
 .section{
     margin-left: 8rem;
@@ -25,10 +29,16 @@ h3 {
     background-color: #ffffff;
 }
 .random{
+
     background-color: #ffffff;
   margin-left: 50px;
   margin-right: 50px;
   padding:1rem;
+
+}
+
+.section{
+  margin-top: 20px;
 }
 .commentsection{
     display: flex;
@@ -73,6 +83,10 @@ input[type="text"] {
   button[type="submit"]:hover {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 12px 22px;
+  }
+  .answertitle{
+    margin-top: 25px;
+    margin-bottom: 10px;
   }
   
   @media screen and (max-width: 758px) {

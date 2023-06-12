@@ -1,7 +1,7 @@
 .maincontainer{
   background-color: #f5e9ef;
-  height: 100vh;
-    width: 100vw;
+  /* height: 100vh;
+    width: 100vw; */
     margin: 0;
 }
 
@@ -20,13 +20,37 @@
   padding: 15px;
   margin-top: 10px;
 }
-.logo img{
-  width:10rem;
-  height:5rem;
- margin-right: 2.5rem;
-
+.logo {
+  display: flex;
+  align-items: center;
 }
 
+.logo img {
+  width: 2.95rem;
+  height: 5rem;
+  margin-right: 0.25rem;
+ 
+}
+
+.logo span {
+  color: black;
+  font-size: 24px;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+}
 
 .three {
   background-color: #f5e9ef;
@@ -43,6 +67,7 @@
   background-color: #ffffff;
   grid-area: four;
   height:70vh;
+ 
 
 }
 
@@ -62,8 +87,12 @@
 .seven {
   background-color: #ffffff;
   grid-area: seven;
-  padding-left:50px;
-  padding-right: 50px;
+  padding-left:20px;
+  padding-right: 20px;
+  height:30vh;
+  justify-content: center;
+  padding-top: 35px;
+
 }
 
 
@@ -73,6 +102,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+
 }
 .watched-tags-button{
 padding: 10px;
@@ -82,6 +112,7 @@ padding: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
+  border: none;
 }
 
 .tags button {
@@ -94,18 +125,22 @@ padding: 10px;
 
 .tag1 {
   grid-area: html;
+  border: none;
 }
 
 .tag2 {
   grid-area: css;
+  border: none;
 }
 
 .tag3 {
   grid-area: js;
+  border: none;
 }
 
 .tag4 {
   grid-area: sass;
+  border: none;
 }
 
 /* Define grid areas for the buttons */
@@ -142,18 +177,33 @@ padding: 10px;
 }
 
 .view-more {
-  margin-left: 30rem; /* Push the view more to the right side */
+  margin-left: 70%; 
 }
 .leftbtn{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
+  border: none;
+ 
 }
 
 .question{
-background-color: #D9D9D9;
-padding:20px;height: min-content;
+
+padding:20px;
+height: min-content;
+display: flex;
+flex-direction: column;
+gap:1rem;
+
+}
+
+.question-info{
+padding:10px;
+  background-color: #D9D9D9;
+border-radius: 15px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 @keyframes floatAnimation {
@@ -185,6 +235,7 @@ input[type="search"] {
 .profile button {
   padding: 10px 20px; /* Adjust the padding values as desired */
   border-radius: 10px;
+  border: none;
 }
 .askQuestion{
   margin-left: 25rem;
@@ -201,6 +252,7 @@ input[type="search"] {
 .Qtag{
 padding: 5.5px;
 }
+
 
 .homebtn{
   padding:10px;
@@ -240,8 +292,9 @@ button:hover {
   }
 
   .searchbar input[type="search"] {
-    width: 100%;
+    width: 10rem;
     margin-right: 0;
+
   }
 
   .profile button {
@@ -259,6 +312,9 @@ button:hover {
   .five {
     width: 100%;
   }
+  .six{
+    display: none;
+  }
 
   .tags {
     grid-template-columns: 1fr 1fr;
@@ -275,4 +331,61 @@ button:hover {
   .tag4 {
     width: 100%;
   }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    margin-right: 0;
+  }
+
+  .searchbar input[type="search"] {
+ 
+    margin-right: 0;
+    margin-top: 50px;
+  }
+  #searchbar{
+    width: 5rem;
+  }
+
+  .profile button {
+    padding: 8px 15px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .four {
+    display: none;
+  }
+
+
+  .container {
+    grid-template-areas:
+      "one one"
+      "two two"
+      "three three"
+      "four four"
+      "five five"
+      "six six"
+      "seven seven";
+    grid-template-columns: 1fr;
+  }
+
+  /* .sidebar {
+    display: none;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+  .container.active .sidebar {
+    display: block;
+  } */
+
+  .content {
+    flex-grow: 1;
+    padding: 10px;
+  }
+
+
+
 }

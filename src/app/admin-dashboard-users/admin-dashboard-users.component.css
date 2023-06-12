@@ -52,6 +52,7 @@
         cursor: pointer;
         margin-top: 55px;
         padding:15px;
+         width:5.8rem;
       }
       .question-type2 {
         padding: 5px 10px;
@@ -63,7 +64,7 @@
         margin-top: 15px;
         justify-content: center;
         padding:15px;
-        width:11.5rem;
+           width:5.8rem;
         margin-right: 50px;
       }
       
@@ -90,15 +91,12 @@
         background-color: #D9D9D9;
         padding: 10px;
         margin-bottom: 20px;
-     width: 40rem;
+     width: 75%;
      height:max-content;
      border-radius: 15px;
       }
       
      
-      
-     
-      
       .edit {
         padding: 5px 10px;
         border-radius: 5px;
@@ -116,16 +114,19 @@
       button:hover{
         background-color: #f5e9ef;
       }
+
       #search-input{
-          width: 35rem;
-  height: 42px;
-  padding: 2px;
-  font-size: 16px;
-  margin-right: 10rem;
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  animation: floatAnimation 2s ease-in-out ;
-  text-align: center;
+        width: 27rem;
+        height: 4.5%;
+        border: none;
+        font-size: 16px;
+        margin-right: 10rem;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        animation: floatAnimation 2s ease-in-out;
+        text-align: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
 
       }
 
@@ -140,4 +141,20 @@
     transform: translateY(0);
   }
 }
-      
+
+.icon{
+display: flex;
+justify-content: end;
+cursor: pointer;
+}
+
+@media screen and (max-width: 740px) {
+  .question {
+    width: 75%;
+  }
+
+  #search-input{
+    width: 85%;
+  }
+
+}

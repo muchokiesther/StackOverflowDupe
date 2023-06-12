@@ -2,8 +2,8 @@
     <div class="profile-container">
         <div class="profile-info">
           <div class="question-buttons">
-            <button class="question-type">Users</button>
-            <button class="question-type2">Questions</button>
+            <button class="question-type" [routerLink]="['/adminusers']" >Users</button>
+            <button class="question-type2" [routerLink]="['/adminquestions']" >Questions</button>
           </div>
         </div>
 
@@ -14,12 +14,12 @@
           <div class="question">
             <p>Why won't image go to code?</p>
           
-            <button class="edit">EDIT</button>
+            <fa-icon class="icon" [icon]="faTrash"></fa-icon>
           </div>
           <div class="question">
             <p>How to put a hamburger menu</p>
           
-            <button class="edit">EDIT</button>
+            <fa-icon class="icon" [icon]="faTrash"></fa-icon>
           </div>
        
         </div>
