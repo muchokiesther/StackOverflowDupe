@@ -9,24 +9,32 @@
         <div class="searchbar">
           <input type="search" id="searchbar" name="myInput" placeholder="Search">
         </div>
-        <div class="profile">
-          <button [routerLink]="['/profile']">PROFILE</button>
-        </div>
         <div class="hamburger-menu" (click)="showSidebar = !showSidebar">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
-        
-        
-                
+        <div class="profile">
+          <button [routerLink]="['/profile']" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" >PROFILE</button>
+        </div>
+     
       </header>
     </div>
+
+    
     <!-- [hidden]="!showSidebar" -->
-    <div  class="four">
+    <div  class=" four sidebar" >
       <div class="leftbtn">
         <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
-        <button class="viewquesbtn" [routerLink]="['/q&a']">View Questions</button><br>
+        <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
+        <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
+      </div>
+    </div>
+
+    <div  class="four"  [hidden]="!showSidebar">
+      <div class="leftbtn">
+        <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
+        <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
         <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
       </div>
     </div>

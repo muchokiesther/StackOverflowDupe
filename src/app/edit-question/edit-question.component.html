@@ -1,6 +1,7 @@
 <div class="container">
 
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/profile']"></fa-icon>
         <h3>EDIT QUESTION</h3>
         <input type="title" id="title" name="title" placeholder="Type your new title?" ngModel required
         #title="ngModel">

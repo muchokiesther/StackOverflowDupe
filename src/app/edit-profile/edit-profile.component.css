@@ -46,6 +46,13 @@
   input.ng-invalid.ng-touched {
     border: 1px solid red;
   }
+  .arrow-icon {
+    font-size: 30px;
+    color: #000000;
+    margin-right: 100%;
+    cursor: pointer;
+  }
+  
   
   @media (max-width: 500px) {
     input {

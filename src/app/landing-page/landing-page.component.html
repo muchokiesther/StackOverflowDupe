@@ -1,8 +1,8 @@
 <div class="maincontainer">
   <div class="header">
-    <img class="logo" src="../../assets/logo.svg" /> <span>StaclOverflow Dupe</span>
+ 
     <div class="buttonContainer">
-      <button class="loginBtn" [routerLink]="['/login']">Log In</button>
+      <button class="loginBtn" [routerLink]="['/login']" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Log In</button>
       <button class="signupBtn" [routerLink]="['/signup']">Sign Up</button>
     </div>
   </div>
@@ -13,6 +13,9 @@
         <img src="../../assets/landingpgimg.svg" />
       </div>
       <div class="text">
+        <div class="ttle">
+        <img class="logo" src="../../assets/logo.svg" /> <span>StackOverflow Dupe</span>
+      </div>
         <p>
           Where curiosity meets collaboration.<br> Discover solutions, connect
           with experts.

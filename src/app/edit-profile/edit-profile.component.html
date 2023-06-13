@@ -1,6 +1,7 @@
 <div class="container">
 
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/profile']" ></fa-icon>
         <h3>EDIT PROFILE</h3>
         <input type="text" id="username" name="username" placeholder="CHANGE USERNAME" ngModel required
             #username="ngModel">

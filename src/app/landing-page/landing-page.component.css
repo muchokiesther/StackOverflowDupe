@@ -11,16 +11,28 @@
    top:0;
    left: 0;
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+  margin-left:50%;
+  
+ 
+}
 
-.header{
-  display:flex;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-height: 20px;
-margin-bottom: 3.5rem;
-margin-top: 1rem;
+.logo {
+  max-height: 4.5rem;
+  vertical-align: middle;
+  margin-right: 5px; 
+}
 
+span {
+  color: #ffffff;
+  font-size: 35px;
 }
 
 .container {
@@ -34,23 +46,11 @@ margin-top: 1rem;
     height: 70%;
     border-radius: 15px;
 }
-.logo {
-    /* position: absolute;
-    top: 15px;
-    left: 20px; 
-    width: 25rem; 
-    height: 5.5rem; 
-    z-index: 999; 
-    border-radius: 5px; */
-    /* max-width: 10rem; */
 
-    max-height: 6.5rem;
- 
-  } 
+.ttle{
+  margin-bottom: 1rem;
+}
 
-  span{
-    color: white;
-  }
   .buttonContainer {
     display: flex;
     top: 15px;
@@ -64,6 +64,7 @@ margin-top: 1rem;
     margin: 0 5px;
     padding: 1rem;
     border-radius: 10px;
+    
   }
   
   .loginBtn,
@@ -124,6 +125,11 @@ margin-top: 1rem;
     transform: scale(1.7); 
   }
 
+  .active{
+    background-color: black;
+    color: white;
+  }
+
 
   @media screen and (max-width: 748px) {
     .img {
@@ -141,6 +147,16 @@ margin-top: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    span{
+font-size: 100%;
+    }
+    .logo{
+width:20%;
+    }
+    p{
+      font-size: 10.5px;
     }
   
     .container {

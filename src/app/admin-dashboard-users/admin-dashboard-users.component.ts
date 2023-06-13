@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 
@@ -13,4 +13,5 @@ import { RouterModule } from '@angular/router';
 })
 export class AdminDashboardUsersComponent {
   faTrash = faTrashCan;
+  faArrowLeft = faArrowLeft;
 }

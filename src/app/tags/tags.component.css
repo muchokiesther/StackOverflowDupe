@@ -10,6 +10,7 @@
 
 .title{
     margin-left: 10rem;
+    padding-top: 10px;
   
   }
 
@@ -22,7 +23,7 @@ margin-top: 1rem;
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-gap: 10px;
     margin: auto;
     max-width: 1200px;
     padding: 15px;
@@ -73,6 +74,15 @@ margin-top: 1rem;
     border: none;
   }
 
+  .arrow-icon {
+    font-size: 30px;
+    color: #000000;
+    margin-left: 5%;
+    cursor: pointer;
+
+  }
+  
+
   @media (max-width: 748px) {
     .maincontainer {
       max-width: 100%;
@@ -88,6 +98,7 @@ margin-top: 1rem;
   
     .container {
       grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
     }
   
     #searchbar {
@@ -107,6 +118,7 @@ margin-top: 1rem;
       height:80%;
       width: 50%;
       padding:1rem;
+      justify-content: center;
     }
   
   }

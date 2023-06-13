@@ -22,11 +22,18 @@ ngOnInit(): void {
 
 
 onSubmit(){
-if(!this.form.invalid){
-  console.log(this.form.value)
-  this.router.navigate(['/home'])
+if(!this.form.invalid ){
+  if(this.form.get('email')?.value === "admin@gmail.com" )
+  {this.router.navigate(['/adminusers'])}else{
+    console.log(this.form.value)
+    this.router.navigate(['/home'])
+  }
+
 }else{
   console.log("invalid")
 }
 }
+
+
+
 }

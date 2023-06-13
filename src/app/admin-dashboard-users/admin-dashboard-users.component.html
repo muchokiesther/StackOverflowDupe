@@ -1,12 +1,14 @@
 <div class="container">
+
     <div class="profile-container">
         <div class="profile-info">
           <div class="question-buttons">
+            <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/home']"></fa-icon>
             <button class="question-type" [routerLink]="['/adminusers']" >Users</button>
             <button class="question-type2" [routerLink]="['/adminquestions']" >Questions</button>
           </div>
         </div>
-
+    
         <div class="posted-questions">
             <P>ADMINISTARTOR DASHBOARD</P>
             <input type="text" id="search-input" placeholder="Search..." />

@@ -61,7 +61,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .four {
@@ -192,7 +191,6 @@ padding: 10px;
   padding: 50px;
   border: none;
  
- 
 }
 
 .question{
@@ -275,32 +273,20 @@ padding: 5.5px;
   padding:10px;
   width:50%;
   margin-bottom: 10px;
-  border-radius: 10px;
-  border: none;
 }
 
 .viewquesbtn{
   padding:10px;
-  border-radius: 5.5px;
-  border: none;
 }
 .viewtagsbtn{
   padding:10px;
   width:7.5rem;
-  border-radius: 5.5px;
-  border: none;
 }
 
 button:hover {
   cursor: pointer;
   background-color: #f5e9ef;
 }
-
-.active{
-  background-color: black;
-  color: white;
-}
-
 
 
 @media (max-width: 768px) {
@@ -318,12 +304,6 @@ button:hover {
 
   .logo img {
     margin-right: 0;
-  }
-
-  .three{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .searchbar input[type="search"] {
@@ -378,9 +358,8 @@ button:hover {
     margin-top: 50px;
   }
   #searchbar{
-    width: 10rem;
+    width: 5rem;
   }
- 
 
   .profile button {
     padding: 8px 15px;
@@ -424,10 +403,7 @@ button:hover {
     padding: 10px;
   }
 
-
-
 }
-
 
 
 @media screen and (max-width:500px){

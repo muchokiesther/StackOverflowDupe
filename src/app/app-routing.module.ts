@@ -28,7 +28,8 @@ const routes: Routes = [
 
  {path:'adminusers',loadComponent:()=>import("./admin-dashboard-questions/admin-dashboard-questions.component").then(c=>c.AdminDashboardQuestionsComponent)},
  
- {path:'adminquestions',loadComponent:()=>import("./admin-dashboard-users/admin-dashboard-users.component").then(c=>c.AdminDashboardUsersComponent)} 
+ {path:'adminquestions',loadComponent:()=>import("./admin-dashboard-users/admin-dashboard-users.component").then(c=>c.AdminDashboardUsersComponent)} ,
+ {path:'allquestions',loadComponent:()=>import("./all-questions/all-questions.component").then(c=>c.AllQuestionsComponent)}
  
 ];
 

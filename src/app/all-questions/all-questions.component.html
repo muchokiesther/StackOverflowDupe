@@ -1,0 +1,113 @@
+<div class="maincontainer">
+    <div class="container"  >
+  
+      <div class="three">
+        <header>
+          <div class="logo">
+            <img src="../../assets/logo.svg"><span>StackOverflow Dupe</span>
+          </div>
+          <div class="searchbar">
+            <input type="search" id="searchbar" name="myInput" placeholder="Search">
+          </div>
+          <div class="profile">
+            <button [routerLink]="['/profile']">PROFILE</button>
+          </div>
+         
+          
+          <div class="hamburger-menu" (click)="showSidebar = !showSidebar">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+                  
+        </header>
+      </div>
+      <div  class=" four sidebar" >
+        <div class="leftbtn">
+          <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
+          <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
+          <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
+        </div>
+      </div>
+  
+      <div  class="four"  [hidden]="!showSidebar">
+        <div class="leftbtn">
+          <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
+          <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
+          <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
+        </div>
+      </div>
+     
+      <div class="five">
+        <div class="question-container">
+          <p> ALL QUESTIONS </p>
+          <button class="askQuestion" [routerLink]="['/askquestion']">ASK A QUESTION</button>
+  
+          <div class="question">
+            <div class="question-info">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
+                laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
+              </p>
+              <button class="Qtag">HTML</button>
+              <div class="votes">
+                <!-- <button class="vote-button">▲</button>
+                <button class="vote-button">▼</button>
+                <span class="vote-count">0 votes</span> -->
+                <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
+  
+              </div>
+              <p class="view-more" [routerLink]="['/q&a']">View more</p>
+            </div>
+            <div class="question-info">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
+                laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
+              </p>
+              <button class="Qtag">HTML</button>
+              <div class="votes">
+                <!-- <button class="vote-button">▲</button>
+                <button class="vote-button">▼</button>
+                <span class="vote-count">0 votes</span> -->
+                <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
+  
+              </div>
+              <p class="view-more" [routerLink]="['/q&a']">View more</p>
+            </div>
+            <div class="question-info">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
+                  laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
+                </p>
+                <button class="Qtag">HTML</button>
+                <div class="votes">
+                  <!-- <button class="vote-button">▲</button>
+                  <button class="vote-button">▼</button>
+                  <span class="vote-count">0 votes</span> -->
+                  <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
+    
+                </div>
+                <p class="view-more" [routerLink]="['/q&a']">View more</p>
+              </div>
+              
+            <div class="question-info">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
+                laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
+              </p>
+              <button class="Qtag">HTML</button>
+              <div class="votes">
+                <!-- <button class="vote-button">▲</button>
+                <button class="vote-button">▼</button>
+                <span class="vote-count">0 votes</span> -->
+                <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
+  
+              </div>
+              <p class="view-more" [routerLink]="['/q&a']">View more</p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    -
+      
+  
+  
+    </div>
+  </div>
