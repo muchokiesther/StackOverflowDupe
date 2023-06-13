@@ -125,9 +125,8 @@
     button:hover{
       background-color: #f5e9ef;
     }
-
     #search-input{
-      width: 95%;
+      width: 27rem;
       height: 4.5%;
       border: none;
       font-size: 16px;
@@ -138,7 +137,12 @@
       text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 10px;
 
+    }
+    .posted-questions p{
+      padding-top: 1rem;
+      padding-left: 1.25rem;
     }
 
     @keyframes floatAnimation {

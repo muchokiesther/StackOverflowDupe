@@ -25,14 +25,14 @@
 }
 
 .logo {
-  max-height: 4.5rem;
+  max-height: 3.5rem;
   vertical-align: middle;
   margin-right: 5px; 
 }
 
 span {
   color: #ffffff;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .container {
@@ -91,6 +91,9 @@ span {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+      
+    
 }
 
 .img {
@@ -129,6 +132,7 @@ span {
     background-color: black;
     color: white;
   }
+  
 
 
   @media screen and (max-width: 748px) {

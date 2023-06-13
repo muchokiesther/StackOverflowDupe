@@ -1,7 +1,7 @@
 .maincontainer{
   background-color: #f5e9ef;
-  /* height: 100vh;
-    width: 100vw; */
+  min-height: 100vh;
+   
     margin: 0;
 }
 
@@ -18,7 +18,7 @@
   margin: auto;
   max-width: 1200px;
   padding: 15px;
-  margin-top: 10px;
+  
 }
 .logo {
   display: flex;
@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .four {
@@ -191,6 +192,7 @@ padding: 10px;
   padding: 50px;
   border: none;
  
+ 
 }
 
 .question{
@@ -224,7 +226,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 input[type="search"] {
-  /* Your existing styles */
+ 
   width: 40rem;
   height: 42px;
   padding: 5px;
@@ -238,10 +240,19 @@ input[type="search"] {
 }
 
 .profile button {
-  padding: 10px 20px; /* Adjust the padding values as desired */
+  padding: 10px 20px;
   border-radius: 10px;
   border: none;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s; 
 }
+
+.profile button:hover {
+  transform: scale(1.2); 
+  background-color: black; 
+  color: white; 
+}
+
+
 .askQuestion {
   margin-left: 25rem;
   margin-bottom: 2rem;
@@ -273,20 +284,32 @@ padding: 5.5px;
   padding:10px;
   width:50%;
   margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
 }
 
 .viewquesbtn{
   padding:10px;
+  border-radius: 5.5px;
+  border: none;
 }
 .viewtagsbtn{
   padding:10px;
   width:7.5rem;
+  border-radius: 5.5px;
+  border: none;
 }
 
 button:hover {
   cursor: pointer;
   background-color: #f5e9ef;
 }
+
+.active{
+  background-color: black;
+  color: white;
+}
+
 
 
 @media (max-width: 768px) {
@@ -306,11 +329,13 @@ button:hover {
     margin-right: 0;
   }
 
-  .searchbar input[type="search"] {
-    width: 10rem;
-    margin-right: 0;
-
+  .three{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+ 
 
   .profile button {
     padding: 8px 15px;
@@ -320,6 +345,17 @@ button:hover {
     padding: 25px;
   }
 
+  .askQuestion{
+    width:22%;
+    padding:2% 5%;
+    font-size: 8px;
+   
+  }
+
+  .question-container p{
+    font-size:14.5px;
+    text-align: center;
+  }
   .question-container {
     width: 100%;
   }
@@ -358,8 +394,9 @@ button:hover {
     margin-top: 50px;
   }
   #searchbar{
-    width: 5rem;
+    width: 15.5rem;
   }
+ 
 
   .profile button {
     padding: 8px 15px;
@@ -403,7 +440,10 @@ button:hover {
     padding: 10px;
   }
 
+
+
 }
+
 
 
 @media screen and (max-width:500px){
