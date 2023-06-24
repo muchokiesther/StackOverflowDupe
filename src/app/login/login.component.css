@@ -81,12 +81,23 @@ gap:20px;
   
   .error{
     color:red;
+    font-size: 13px;
+    padding: 2.5px;
+    margin-top: 2px;
   }
   
   input.ng-invalid.ng-touched {
     border: 1px solid red;
   }
-  
+
+  .errorMessage {
+    background-color: #FF0000;
+    color: white;
+    text-align: center;
+    padding: 0.5px;
+    margin-bottom:20px;
+
+  }
 
   @media screen and (max-width:750px){
     #email{

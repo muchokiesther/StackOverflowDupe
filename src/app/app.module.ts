@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShortPipe } from './Pipes/short';
+import { HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ShortPipe } from './Pipes/short';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
  
   ],
   providers: [],

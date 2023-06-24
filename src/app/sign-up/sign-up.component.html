@@ -1,8 +1,12 @@
 
 <div class="maincontainer">
 <div class="container">
-    <div class="userDetailsContainer">
+ 
+    <div class="userDetailsContainer"> 
         <h4>Welcome, Register with us <br>Today!.</h4>
+        <div class="errorMessage" *ngIf="errorMessage">
+            <p>{{errorMessage}}</p>
+        </div> 
         <form class="userDetails" (ngSubmit)="onSubmit()" [formGroup]="form">
             <input type="text" id="userName" name="username" placeholder="USERNAME" formControlName="userName">
             <p class="error" *ngIf="!form.get('userName')?.valid && form.get ('userName')?.touched">*Username is required</p>

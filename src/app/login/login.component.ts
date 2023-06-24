@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { ReactiveFormsModule,FormControlName,FormGroup,FormControl,Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,9 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor(private router:Router){}
+  constructor(private router:Router, private userService:UserServiceService){}
 form!:FormGroup
+errorMessage=null
 ngOnInit(): void {
   this.form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -22,16 +24,26 @@ ngOnInit(): void {
 
 
 onSubmit(){
-if(!this.form.invalid ){
-  if(this.form.get('email')?.value === "admin@gmail.com" )
-  {this.router.navigate(['/adminusers'])}else{
-    console.log(this.form.value)
-    this.router.navigate(['/home'])
-  }
+  this.userService.loginUser(this.form.value).subscribe(
+    res=>{
+  console.log ( res )
+  this.router.navigate(['/home']);
+    },
+    err=>{
+    this.errorMessage=err.error.message
+    }
+  )
 
-}else{
-  console.log("invalid")
-}
+// if(!this.form.invalid ){ 
+//   if(this.form.get('email')?.value === "admin@gmail.com" )
+//   {this.router.navigate(['/adminusers'])}else{
+//     console.log(this.form.value)
+//     this.router.navigate(['/home'])
+//   }
+
+// }else{
+//   console.log("invalid")
+// }
 }
 
 
