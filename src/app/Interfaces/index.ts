@@ -31,7 +31,7 @@ message:string
 export interface LoginUserSuccess{
     token:string
    role:string 
-   userName:string;
+   username:string
     }
 
 

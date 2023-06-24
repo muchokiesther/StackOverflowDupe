@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActivateService } from './services/activate.service';
 
 const routes: Routes = [
  {path:'',loadComponent:()=> import("./landing-page/landing-page.component").then(c=>c.LandingPageComponent)},
@@ -8,7 +9,7 @@ const routes: Routes = [
 
  {path:'login',loadComponent:()=> import("./login/login.component").then(c=>c.LoginComponent)},
 
- {path:'home',loadComponent:()=> import("./home-page/home-page.component").then(c=>c.HomePageComponent)},
+ {path:'home',canActivate:[ActivateService],loadComponent:()=> import("./home-page/home-page.component").then(c=>c.HomePageComponent)},
 
  {path:'profile',loadComponent:()=> import("./user-profile/user-profile.component").then(c=>c.UserProfileComponent)},
 

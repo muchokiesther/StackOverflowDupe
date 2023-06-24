@@ -12,11 +12,14 @@
       </div>
     </div>
     <div class="posted-questions">
-      <h2>JOHN DOES</h2>
-      <button class="edit-profile" [routerLink]="['/editprofile']">
+      <h2 *ngIf="authservice.isloggedIn()" >{{authservice.getuserName()}}</h2>
+      <button class="edit-profile" [routerLink]="['/editprofile']"> 
         <fa-icon [icon]="faPen"></fa-icon>
         EDIT PROFILE
-      </button>
+
+      </button>  
+      <button class="logout" *ngIf=" authservice.isloggedIn()" (click)="authservice.logout()">LOG OUT</button>
+  
       
      
    

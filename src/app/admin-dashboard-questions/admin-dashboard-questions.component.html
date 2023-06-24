@@ -13,13 +13,13 @@
             <input type="text" id="search-input" placeholder="Search..." />
           <h3>USERS:</h3>
           
-            <div class="super">
+            <div class="super"   >
 
-                <div class="one">
-                  <p>Karry Kemu</p>
+                <div class="one" *ngFor="let userS of users">
+                  <p>{{userS.userName}}</p>
                <fa-icon class="icon" [icon]="faTrash"></fa-icon>
                 </div >
-                <div class="one">
+                <!-- <div class="one">
                     <p>Karry Kemu</p>
                     <fa-icon class="icon" [icon]="faTrash"></fa-icon>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="one">
                     <p>Karry Kemu</p>
                     <fa-icon class="icon" [icon]="faTrash"></fa-icon>
-                </div>
+                </div> -->
         </div>
        
      

@@ -26,7 +26,10 @@ ngOnInit(): void {
 onSubmit(){
   this.userService.loginUser(this.form.value).subscribe(
     res=>{
-  console.log ( res )
+
+  this.errorMessage=null 
+  localStorage.setItem('token',res.token)
+  localStorage.setItem('role',res.role)
   this.router.navigate(['/home']);
     },
     err=>{
@@ -34,16 +37,6 @@ onSubmit(){
     }
   )
 
-// if(!this.form.invalid ){ 
-//   if(this.form.get('email')?.value === "admin@gmail.com" )
-//   {this.router.navigate(['/adminusers'])}else{
-//     console.log(this.form.value)
-//     this.router.navigate(['/home'])
-//   }
-
-// }else{
-//   console.log("invalid")
-// }
 }
 
 

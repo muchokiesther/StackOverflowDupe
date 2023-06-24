@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowLeft, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,6 +13,7 @@ import { faArrowLeft, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icon
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
+  constructor(public authservice:AuthService){}
   showPreviouslyAnswered: boolean = false;
 
   togglePreviouslyAnswered() {
@@ -21,4 +23,8 @@ export class UserProfileComponent {
   faTrash = faTrashCan;
   faPen = faPen;
   faArrowLeft = faArrowLeft;
+
+
+
+   
 }
