@@ -24,20 +24,27 @@ ngOnInit(): void {
 
 
 onSubmit(){
-  this.userService.loginUser(this.form.value).subscribe(
-    res=>{
 
-  this.errorMessage=null 
-  localStorage.setItem('token',res.token)
-  localStorage.setItem('role',res.role)
-  this.router.navigate(['/home']);
-    },
-    err=>{
-    this.errorMessage=err.error.message
-    }
-  )
-
-}
+    this.userService.loginUser(this.form.value).subscribe(
+      res => {
+        this.errorMessage = null;
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('role', res.role);
+        localStorage.setItem('username', res.username);
+  
+        // Check if the role is "admin" and redirect accordingly
+        if (res.role === 'admin') {
+          this.router.navigate(['/adminusers']);
+        } else {
+          this.router.navigate(['/home']);
+        }
+      },
+      err => {
+        this.errorMessage = err.error.message;
+      }
+    );
+  }
+  
 
 
 
