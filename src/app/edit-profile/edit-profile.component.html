@@ -12,6 +12,6 @@
         <input type="password" id="password" name="password" placeholder="ENTER PASSWORD TO CONFIRM" ngModel required
             #password="ngModel">
         <p class="error" *ngIf="!password.value && password.touched">Password is required*</p>
-        <button type="submit" class="btn">SUBMIT</button>
+        <button type="submit" class="btn" (click)="updateUser()">SUBMIT</button>
     </form>
 </div>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginUser, LoginUserSuccess, NewUser, User, addUserSuccess } from '../Interfaces';
 import { Observable } from 'rxjs';
@@ -19,6 +19,20 @@ loginUser(loginUser:LoginUser):Observable<LoginUserSuccess>{
 
 getUsers():Observable<User[]>{
   return this.http.get<User[]>('http://localhost:4000/users')
+}
+
+getUserById(userId: string):Observable<User[]>{
+  let token = localStorage.getItem('token') as string
+  return this.http.delete<User[]>(`http://localhost:4000/users/${userId}`,{
+    headers:new HttpHeaders().set('token',token)
+  })
+}
+
+updateUser(userId: string, newUser:NewUser):Observable<addUserSuccess>{
+  let token = localStorage.getItem('token') as string
+  return this.http.put<addUserSuccess>(`http://localhost:4000/users/${userId}`,newUser,{
+    headers:new HttpHeaders().set('token',token)
+  })
 }
 
 }

@@ -29,4 +29,16 @@ export class AdminDashboardQuestionsComponent implements OnInit {
       this.users = users;
     });
   }
+
+getUserById(userId: string) {
+    this.userService.getUserById(userId).subscribe(
+      (users: User[]) => {
+        // Handle the retrieved users here
+      },
+      error => {
+        // Handle the error here
+      }
+    );
+  }
+
 }

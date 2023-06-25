@@ -45,6 +45,7 @@ export  interface questions {
     body:string
     tag:string
     isDeleted: number
+    tagName:string
 }
 
 
