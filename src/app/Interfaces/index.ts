@@ -39,7 +39,7 @@ export interface LoginUserSuccess{
 
 export  interface questions {
 
-    questionId:string
+    questionsId:string
     userId:string
    title:string
     body:string

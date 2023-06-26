@@ -32,11 +32,11 @@ export class AdminDashboardQuestionsComponent implements OnInit {
 
 getUserById(userId: string) {
     this.userService.getUserById(userId).subscribe(
-      (users: User[]) => {
-        // Handle the retrieved users here
+      (res) => {
+        this.loadUsers();
       },
-      error => {
-        // Handle the error here
+      (error) => {
+       
       }
     );
   }

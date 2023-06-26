@@ -16,32 +16,34 @@ import { NewUser, User, addUserSuccess } from '../Interfaces';
 })
 export class EditProfileComponent {
   faArrowLeft = faArrowLeft;
-  user: User = {
-    userId: '',
+  newUser: NewUser = {
+   
     userName: '',
     email: '',
     password: '',
-    emailSent: 0,
-    isDeleted: 0,
-    roles: ''
+  
   };
 
   constructor(private userService: UserServiceService) {}
 
   onSubmit(form: NgForm) {
-    // Handle form submission if needed
-  }
-
-  updateUser() {
-    this.userService.updateUser(this.user.userId, this.user).subscribe(
+    console.log(form.value);
+    this.userService.updateUser(form.value).subscribe(
       (response: addUserSuccess) => {
-        // Handle the success response here
         console.log(response);
+    
       },
       error => {
-        // Handle the error here
         console.error(error);
+   
       }
     );
+    
   }
+
+ 
 }
+
+
+
+

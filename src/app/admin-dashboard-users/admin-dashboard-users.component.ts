@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { questions } from '../Interfaces';
 import { QuestionsService } from '../services/questions.service';
 
@@ -19,7 +19,7 @@ export class AdminDashboardUsersComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   questions: questions[] = [];
 
-  constructor(private questionsService: QuestionsService) { }
+  constructor(private questionsService: QuestionsService, private router:Router) { }
 
   ngOnInit() {
     this.getQuestions();
@@ -27,8 +27,8 @@ export class AdminDashboardUsersComponent implements OnInit {
 
   getQuestions() {
     this.questionsService.getQuestions().subscribe(
-      (data: questions[]) => {
-        this.questions = data;
+      (res) => {
+        this.questions = res;
       },
       (error) => {
         console.log(error);
@@ -36,19 +36,21 @@ export class AdminDashboardUsersComponent implements OnInit {
     );
   }
 
-
-  deleteQuestion(questionsId: string) {
+  deleteQuestion(questionsId:string){
+    console.log(questionsId);
     this.questionsService.deleteQuestion(questionsId).subscribe(
-      (data: questions[]) => {
-        // Handle successful deletion, if needed
-        console.log('Question deleted successfully');
-        this.getQuestions(); // Refresh the questions list
+      (res) => {  
+        this.getQuestions()
+     //   this.router.navigate(['adminquestions'])
+        //onsole.log(res);
       },
-      (error) => {
-        console.log(error);
-      }
-    );
+    (error) => {console.log(error);
+    }
+    )
+    
   }
+
+  
 
 
 }

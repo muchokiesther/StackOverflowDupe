@@ -3,15 +3,15 @@
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
         <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/profile']" ></fa-icon>
         <h3>EDIT PROFILE</h3>
-        <input type="text" id="username" name="username" placeholder="CHANGE USERNAME" ngModel required
-            #username="ngModel">
-        <p class="error" *ngIf="!username.value && username.touched">Username is required*</p>
+        <input type="text" id="username" name="userName" placeholder="CHANGE USERNAME" ngModel required
+            #userName="ngModel">
+        <p class="error" *ngIf="!userName.value && userName.touched">Username is required*</p>
         <input type="email" id="email" name="email" placeholder="CHANGE CURRENT EMAIL IN USE" ngModel required email
             #email="ngModel">
         <p class="error" *ngIf="!email.value && email.touched">Email is required*</p>
         <input type="password" id="password" name="password" placeholder="ENTER PASSWORD TO CONFIRM" ngModel required
             #password="ngModel">
         <p class="error" *ngIf="!password.value && password.touched">Password is required*</p>
-        <button type="submit" class="btn" (click)="updateUser()">SUBMIT</button>
+        <button type="submit" class="btn" >SUBMIT</button>
     </form>
 </div>
