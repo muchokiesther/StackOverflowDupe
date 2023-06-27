@@ -16,7 +16,7 @@
         
           
           <div >
-            <div class="question" *ngFor="let question of questions">
+            <div class="question" *ngFor="let question of questions |async ">
               <h3>{{ question.title }}</h3>
               <p>{{ question.body }}</p>
               <p>{{question.tagName}}</p>

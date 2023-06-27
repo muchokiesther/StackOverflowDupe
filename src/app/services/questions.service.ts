@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { questions } from '../Interfaces';
+import { NewQuestion, addQuestionSuccess, questions } from '../Interfaces';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -26,6 +26,26 @@ export class QuestionsService {
   }
 
 
+    addQuestion( newQuestion:NewQuestion):Observable<addQuestionSuccess>{
+      let token = localStorage.getItem('token') as string
+      console.log (newQuestion);
+      return this.http.post<addQuestionSuccess>(`http://localhost:4000/questions`,newQuestion,{
+        headers:new HttpHeaders().set('token',token)
+      })
+    }
 
-}
+    updateQuestion(newQuestion: NewQuestion, questionsId: string): Observable<addQuestionSuccess> {
+      let token = localStorage.getItem('token') as string;
+      console.log(newQuestion);
+      return this.http.post<addQuestionSuccess>(`http://localhost:4000/questions/${questionsId}`, newQuestion, {
+        headers: new HttpHeaders().set('token', token)
+      });
+    }
+    
+
+  }
+
+
+
+
 

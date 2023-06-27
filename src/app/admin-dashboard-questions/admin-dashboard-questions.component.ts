@@ -5,6 +5,12 @@ import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { RouterModule } from '@angular/router';
 import { User } from '../Interfaces';
 import { UserServiceService } from '../services/user-service.service';
+import { AppState } from '../State/appState';
+import { Store, select } from '@ngrx/store';
+import { GetUsers } from '../State/Actions/userActions';
+import { getUsers } from '../State/Reducers/userReducer';
+import { Observable } from 'rxjs';
+;
 
 @Component({
   selector: 'app-admin-dashboard-questions',
@@ -16,18 +22,19 @@ import { UserServiceService } from '../services/user-service.service';
 export class AdminDashboardQuestionsComponent implements OnInit {
   faTrash = faTrashCan;
   faArrowLeft = faArrowLeft;
-  users: User[] = [];
-  constructor(private userService:UserServiceService){}
+  // users: User[] = [];
+  constructor(private userService:UserServiceService, private store:Store<AppState >){}
+  users!:Observable<User[]>
   ngOnInit(): void {
   this.loadUsers();
-
+ 
   }
 
   
+
   loadUsers() {
-    this.userService.getUsers().subscribe((users: User[]) => {
-      this.users = users;
-    });
+    this.store.dispatch(GetUsers());
+    this.users = this.store.pipe(select(getUsers));
   }
 
 getUserById(userId: string) {

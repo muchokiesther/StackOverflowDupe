@@ -1,14 +1,8 @@
-import { createAction, props } from "@ngrx/store";
-import { LoginUserSuccess, LoginUser, NewUser } from "src/app/Interfaces";
+import {createAction, props} from '@ngrx/store'
+import { User } from 'src/app/Interfaces'
 
+export const GetUsers = createAction('[User]-GetUser')
+export const GetUsersSuccess = createAction('[User]-GetUserSuccess',props<{Users:User[]}>())
 
-
-export const userRegistration = createAction('[Registration] user Registration', props<{newUser:NewUser}>())
-export const userRegistrationSuccess = createAction('[Registration] user Registration Success', props<{message:string}>())
-export const userRegistrationFailure = createAction('[Registration] user Registration Failure', props<{error:string}>())
-
-
-
-export const userLogin = createAction('[Login] user Login', props<{user:LoginUser}>())
-export const userLoginSuccess = createAction('[Login] user Login Success')
-export const userLoginFailure = createAction('[Login] user Registration Failure', props<{error:string}>())
+export const GetUsersFailure = createAction('[User]-GetUsersFailure', props<{errorMessage:string}>())
+ 

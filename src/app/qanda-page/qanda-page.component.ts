@@ -4,6 +4,7 @@ import { faArrowLeft, faComment, faPaperPlane, faTrophy } from '@fortawesome/fre
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { CommentsService } from '../services/comments.service';
 
 @Component({
   selector: 'app-qanda-page',
@@ -17,9 +18,20 @@ export class QandaPageComponent {
   faPaperPlane = faPaperPlane;
   faComment = faComment
   faArrowLeft = faArrowLeft;
+constructor(private commentsService:CommentsService){}
+onSubmit(form: NgForm) {
+  const { questionsId, answerId } = form.value;
+  console.log(form.value);
+  this.commentsService.addComment(questionsId, answerId).subscribe(
+    (response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+}
 
-  onSubmit(form:NgForm){
-    console.log(form);
     
 }
-}
+

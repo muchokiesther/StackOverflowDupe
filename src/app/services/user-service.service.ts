@@ -22,7 +22,7 @@ getUsers():Observable<User[]>{
 }
 
 getUserById(userId: string):Observable<User[]>{
-  let token = localStorage.getItem('token') as string
+  let token = localStorage.getItem('token') as string                                   
   return this.http.delete<User[]>(`http://localhost:4000/users/${userId}`,{
     headers:new HttpHeaders().set('token',token)
   })

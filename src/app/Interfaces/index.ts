@@ -35,6 +35,17 @@ export interface LoginUserSuccess{
     }
 
 
+    export interface NewQuestion{
+        title:string
+        body:string
+       TAGS:string
+    }
+
+    export interface addQuestionSuccess{
+        message:string
+    }
+
+
 
 
 export  interface questions {
@@ -44,8 +55,10 @@ export  interface questions {
    title:string
     body:string
     tag:string
+    TAGS:[]
     isDeleted: number
     tagName:string
+ 
 }
 
 

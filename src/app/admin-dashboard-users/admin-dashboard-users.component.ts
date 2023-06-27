@@ -5,6 +5,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Router, RouterModule } from '@angular/router';
 import { questions } from '../Interfaces';
 import { QuestionsService } from '../services/questions.service';
+import { AppState } from '../State/appState';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { GetQuestions } from '../State/Actions/questionsActions';
+import { getQuestions } from '../State/Reducers/questionsReducer';
 
 @Component({
   selector: 'app-admin-dashboard-users',
@@ -17,23 +22,19 @@ import { QuestionsService } from '../services/questions.service';
 export class AdminDashboardUsersComponent implements OnInit {
   faTrash = faTrashCan;
   faArrowLeft = faArrowLeft;
-  questions: questions[] = [];
 
-  constructor(private questionsService: QuestionsService, private router:Router) { }
+  questions!:Observable<questions[]>
+  constructor(private questionsService: QuestionsService, private router:Router,private store:Store<AppState >) { }
 
   ngOnInit() {
     this.getQuestions();
   }
 
   getQuestions() {
-    this.questionsService.getQuestions().subscribe(
-      (res) => {
-        this.questions = res;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+
+    this.store.dispatch(GetQuestions())
+    this.questions = this.store.pipe(select(getQuestions))
+
   }
 
   deleteQuestion(questionsId:string){

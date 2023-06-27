@@ -73,10 +73,10 @@
             </div>
             <p class="view-more" [routerLink]="['/q&a']">View more</p>
           </div>
-          <div class="question-info">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
-              laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
-            </p>
+          <div class="question-info" *ngFor="let question of questions |async">
+            <h3>{{ question.title }}</h3>
+              <p>{{ question.body }}</p>
+              <p>{{question.TAGS}}</p>
             <button class="Qtag">HTML</button>
             <div class="votes">
               <!-- <button class="vote-button">▲</button>
