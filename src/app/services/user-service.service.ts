@@ -31,7 +31,6 @@ getUserById(userId: string):Observable<User[]>{
 updateUser( newUser:NewUser):Observable<addUserSuccess>{
   let token = localStorage.getItem('token') as string
   console.log (token);
-  
   return this.http.put<addUserSuccess>(`http://localhost:4000/users`,newUser,{
     headers:new HttpHeaders().set('token',token)
   })

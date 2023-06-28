@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, AbstractControl, Validators, FormBuilder } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
+import { AppState } from '../State/appState';
+import { Store } from '@ngrx/store';
+import { Addusers } from '../State/Actions/userActions';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +15,7 @@ import { UserServiceService } from '../services/user-service.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  constructor(private router:Router, private fb:FormBuilder,private userService:UserServiceService) { }
+  constructor(private router:Router, private fb:FormBuilder,private userService:UserServiceService,private store:Store <AppState>) { }
   form!: FormGroup
 errorMessage=null
   ngOnInit(): void {
@@ -36,15 +39,18 @@ errorMessage=null
 
   onSubmit(){
 
-    this.userService.addUser(this.form.value).subscribe(
-      res=>{
-    console.log ( res.message )
+
+    this.store.dispatch(Addusers({newUser:this.form.value})),
     this.router.navigate(['/login']);
-      },
-      err=>{
-      this.errorMessage=err.message
-      }
-    )
+    // this.userService.addUser(this.form.value).subscribe(
+    //   res=>{
+    // console.log ( res.message )
+    // this.router.navigate(['/login']);
+    //   },
+    //   err=>{
+    //   this.errorMessage=err.message
+    //   }
+    // )
   
     }
 

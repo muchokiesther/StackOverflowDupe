@@ -3,6 +3,9 @@ import { CommonModule} from '@angular/common';
 import { ReactiveFormsModule,FormControlName,FormGroup,FormControl,Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
+import { AppState } from '../State/appState';
+import { Store } from '@ngrx/store';
+import { Userlogin } from '../State/Actions/userActions';
 // import { AppState } from '../State/appState';
 // import { GetUsers } from '../State/Actions/userActions';
 
@@ -14,7 +17,7 @@ import { UserServiceService } from '../services/user-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor(private router:Router, private userService:UserServiceService){}
+  constructor(private router:Router, private userService:UserServiceService,private store:Store<AppState>){}
 form!:FormGroup
 errorMessage=null
 ngOnInit(): void {
@@ -28,26 +31,9 @@ ngOnInit(): void {
 
 onSubmit(){
 
-    this.userService.loginUser(this.form.value).subscribe(
-      res => {
-        this.errorMessage = null;
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('role', res.role);
-        localStorage.setItem('username', res.username);
-  
-        // Check if the role is "admin" and redirect accordingly
-        if (res.role === 'admin') {
-          this.router.navigate(['/adminusers']);
-        } else {
-          this.router.navigate(['/home']);
-        }
-      },
-      err => {
-        this.errorMessage = err.error.message;
-      }
-    );
+  this.store.dispatch(Userlogin({user:this.form.value}))
   }
-  
+
 
 
 

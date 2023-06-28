@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserServiceService } from '../services/user-service.service';
 import { NewUser, User, addUserSuccess } from '../Interfaces';
+import { AppState } from '../State/appState';
+import { Store } from '@ngrx/store';
+import { Updateusers } from '../State/Actions/userActions';
 
 @Component({
   selector: 'app-edit-profile',
@@ -24,20 +27,22 @@ export class EditProfileComponent {
   
   };
 
-  constructor(private userService: UserServiceService) {}
+  constructor(private userService: UserServiceService,private store:Store<AppState>) {}
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    this.userService.updateUser(form.value).subscribe(
-      (response: addUserSuccess) => {
-        console.log(response);
+    // console.log(form.value);
+    // this.userService.updateUser(form.value).subscribe(
+    //   (response: addUserSuccess) => {
+    //     console.log(response);
     
-      },
-      error => {
-        console.error(error);
+    //   },
+    //   error => {
+    //     console.error(error);
    
-      }
-    );
+    //   }
+    // );
+
+this.store.dispatch(Updateusers({updatedUser:this.newUser}))
     
   }
 

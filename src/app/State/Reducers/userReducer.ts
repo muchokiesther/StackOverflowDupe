@@ -5,11 +5,23 @@ import * as UserActions from '../Actions/userActions';
 export interface UserInterface {
   Users: User[];
   getUserError: string;
+  addusersuccess:string
+  adduserfailure:string 
+ updateusersuccess:string
+ updateuserfailure:string 
+ loginusersuccess:string 
+ loginuserfailure:string 
 }
 
 const initialState: UserInterface = {
   Users: [],
-  getUserError: ''
+  getUserError: '',
+  addusersuccess:'',
+  adduserfailure:'', 
+ updateusersuccess:'',
+  updateuserfailure:'',
+ loginusersuccess:'',
+  loginuserfailure:''
 };
 
 //selectors
@@ -29,11 +41,54 @@ return{
 
   on(UserActions.GetUsersFailure , (state, action):UserInterface =>{
     return{
-        ...state,
+        ...state, 
         getUserError: action.errorMessage ,
         Users: []
     }
-      })
+      }),
+      on(UserActions.AddusersSuccess , (state, action):UserInterface =>{
+        return{
+            ...state,
+         adduserfailure:'',
+         addusersuccess:action.message
+        }
+          }),
+          on(UserActions.AddusersFailure , (state, action):UserInterface =>{
+            return{
+                ...state,
+             adduserfailure:action.message,
+             addusersuccess:''
+            }
+              }),
+
+              on(UserActions.UpdateusersSuccess , (state, action):UserInterface =>{
+                return{
+                    ...state,
+                 updateuserfailure:'',
+                 updateusersuccess:action.message
+                }
+                  }),
+                  on(UserActions.UpdateusersFailure , (state, action):UserInterface =>{
+                    return{
+                        ...state,
+                    updateuserfailure:action.message,
+                    updateusersuccess:''
+                    }
+                      }) ,
+                      on(UserActions.UserloginSuccess , (state, action):UserInterface =>{
+                        return{
+                            ...state,
+                         loginuserfailure:'',
+                        loginusersuccess:action.message
+                        }
+                          }),
+                          on(UserActions.UserloginFailure, (state, action):UserInterface =>{
+                            return{
+                                ...state,
+                         loginuserfailure:action.message,
+                           loginusersuccess:''
+                            }
+                              }) 
   
  
 
