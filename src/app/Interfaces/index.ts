@@ -28,6 +28,11 @@ export interface addUserSuccess{
 message:string
 }
 
+
+export interface votesSuccess{
+    message:string
+    }
+
 export interface LoginUserSuccess{
     token:string
    role:string 
