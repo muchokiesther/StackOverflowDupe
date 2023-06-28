@@ -10,9 +10,9 @@ export class AnswersService {
 
   constructor(private http: HttpClient) { }
 
-  addAnswer(questionsId: string):Observable<answers []>{
+  addAnswer(questionsId: string, body:string):Observable<answers []>{
     let token = localStorage.getItem('token') as string
-    return this.http.post<answers[]>(`http://localhost:4000/answer/${questionsId}`,{
+    return this.http.post<answers[]>(`http://localhost:4000/answer/${questionsId}`,body,{
       headers:new HttpHeaders().set('token',token)
     })
   }

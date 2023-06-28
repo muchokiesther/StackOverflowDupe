@@ -41,9 +41,18 @@ export class QuestionsService {
         headers: new HttpHeaders().set('token', token)
       });
     }
+
+   
+      getOneQuestion(questionsId:string):Observable<questions>{
+        let token = localStorage.getItem('token') as string
+        return this.http.get<questions>(`http://localhost:4000/questions/${questionsId}`,{
+          headers:new HttpHeaders().set('token',token)
+        })
+      }
+    }
     
 
-  }
+  
 
 
 

@@ -1,55 +1,62 @@
-<div class="maincontainer" >
-  <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/home']" ></fa-icon>
+<div class="maincontainer"   >
+  <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/home']"></fa-icon>
   <h3>See Questions and Answers </h3>
 
   <!-- Question -->
-  <div class="questiondetails">
-    <h2>How to remove the box around the link element?</h2>
-    <p>I'm new to HTML and CSS. I would like to have an invisible link, but I don't want to set the style of 'a' tags
-      directly. Instead, I would like to set the style of its parent element so that it becomes invisible.</p>
-
-
-
+  <div class="questiondetails" *ngIf=" questions ">
+    <h3>{{ questions.title }}</h3>
+    <p>{{ questions.body }}</p>
   </div>
+
+
+
+
 
   <!-- Answers -->
   <div class="random">
     <h2 class="section">Answers:</h2>
     <div class="section2">
-      <p>The 'box' around your link has a default outline property defined. Be sure to include
-        <code>outline: none;</code> to any element or pseudo-selector that includes this treatment.
-      </p>
-
-      <div class="votes">
-        <div class="icons">
-          <fa-icon class="icon" [icon]="faTrophy"></fa-icon>
-          <fa-icon class="icon" [icon]=" faComment"></fa-icon>
+      <div *ngFor="let answers of answers">
+        <div>
+          <p>{{ answers.body }}</p>
+          <div class="votes">
+            <div class="icons">
+              <fa-icon class="icon" [icon]="faTrophy"></fa-icon>
+              <fa-icon class="icon" [icon]=" faComment" (click)=" showCommentbar = !showCommentbar"></fa-icon>
+            </div>
+            <div class="votealign">
+              <span class="vote-count">0 votes</span>
+              <button class="vote-button">▲</button>
+              <button class="vote-button">▼</button> 
+            </div> 
+          </div>
         </div>
-        <div class="votealign">
-          <span class="vote-count">0 votes</span>
-        <button class="vote-button">▲</button>
-        <button class="vote-button">▼</button>
-      
+        <div class="commentsection">
+          <input type="text" id="comment" name="body" placeholder="Enter your comment here" required
+            [hidden]="!showCommentbar" #body>
+          <fa-icon class="send-icon" [icon]="faPaperPlane" [hidden]="!showCommentbar" (click)="sendComments(body.value, answers.answerId)"></fa-icon>
+        </div>
+    
+        <div *ngFor="let comment of comments">
+          {{ comment.body }}
+        </div>
+        
 
-      </div>
 
 
+        
       </div>
     </div>
-  </div>
-  <div class="commentsection">
-    <input type="text" id="comment" name="comment" placeholder="Enter your comment here" required>
-    <fa-icon class="send-icon" [icon]="faPaperPlane"  ></fa-icon>
-  </div>
-  
+    
 
-  <!-- Post your answer -->
-  <h2 class="answertitle">Post Your Answer</h2>
-  <form id="textarea" (ngSubmit)="onSubmit(form)" #form="ngForm">
-    <textarea name="answer" placeholder="Type your answer here" ngModel required answer
-    #answer="ngModel"></textarea>
-    <br>
-    <button type="submit"  [disabled]="!form.valid" >POST YOUR ANSWER</button>
-  </form>
+    <!-- Post your answer -->
+    <h2 class="answertitle">Post Your Answer</h2>
+    <form id="textarea" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <textarea name="body" placeholder="Type your answer here" ngModel required answer #answer="ngModel"></textarea>
+      <br>
+      <button type="submit" [disabled]="!form.valid">POST YOUR ANSWER</button>
+    </form>
 
-</div>
+  </div>
+
+  </div>

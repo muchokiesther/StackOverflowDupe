@@ -25,7 +25,7 @@ const routes: Routes = [
 
  {path:'resetpassword',loadComponent:()=>import("./reset-password/reset-password.component").then(c=>c.ResetPasswordComponent)},
 
- {path:'q&a',loadComponent:()=>import("./qanda-page/qanda-page.component").then(c=>c.QandaPageComponent)},
+ {path:'q&a/:questionsId',loadComponent:()=>import("./qanda-page/qanda-page.component").then(c=>c.QandaPageComponent)},
 
  {path:'adminusers',loadComponent:()=>import("./admin-dashboard-questions/admin-dashboard-questions.component").then(c=>c.AdminDashboardQuestionsComponent)},
  

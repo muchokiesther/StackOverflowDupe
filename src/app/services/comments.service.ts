@@ -10,9 +10,9 @@ export class CommentsService {
 
   constructor(private http: HttpClient) { }
 
-  addComment(questionsId: string, answerId:string):Observable< comments []>{
+  addComment(questionsId: string,body:string, answerId:string){
     let token = localStorage.getItem('token') as string
-    return this.http.post< comments[]>(`http://localhost:4000/comments/${questionsId}/${answerId}`,{
+    return this.http.post< comments[]>(`http://localhost:4000/comments/${questionsId}/${answerId}`,{body} , {
       headers:new HttpHeaders().set('token',token)
     })
   }
