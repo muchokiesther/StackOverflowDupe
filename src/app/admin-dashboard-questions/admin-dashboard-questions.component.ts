@@ -7,7 +7,7 @@ import { User } from '../Interfaces';
 import { UserServiceService } from '../services/user-service.service';
 import { AppState } from '../State/appState';
 import { Store, select } from '@ngrx/store';
-import { GetUsers } from '../State/Actions/userActions';
+import { GetUsers, deleteuser } from '../State/Actions/userActions';
 import { getUsers } from '../State/Reducers/userReducer';
 import { Observable } from 'rxjs';
 ;
@@ -38,14 +38,7 @@ export class AdminDashboardQuestionsComponent implements OnInit {
   }
 
 getUserById(userId: string) {
-    this.userService.getUserById(userId).subscribe(
-      (res) => {
-        this.loadUsers();
-      },
-      (error) => {
-       
-      }
-    );
+this.store.dispatch(deleteuser({userId}))
   }
 
 }

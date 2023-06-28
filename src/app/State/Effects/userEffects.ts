@@ -75,17 +75,24 @@ loginUser$ = createEffect(() => {
           return UserActions.UserloginSuccess({ message: res.message });
         }),
         catchError((error: any) => of(UserActions.UserloginFailure({ message: error })))
-      );
+      )
     })
+  )
+})
+
+deleteProperty$ = createEffect(() => {
+  return this.action$.pipe(
+    ofType(UserActions.deleteuser),
+    mergeMap(action => {
+      return this.userService.getUserById(action.userId).pipe(
+        map(message => UserActions.deleteuserSuccess({ message: message.message })),
+        catchError(error => of(UserActions.deleteuserFailure({ message: error })))
+      );
+    }),
+    // REFRESH BEHAVIOR:
+    switchMap(() => of(UserActions.GetUsers()))
   );
 });
-
-
-
-
-
-
-
 
 
 

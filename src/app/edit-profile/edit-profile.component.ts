@@ -19,36 +19,12 @@ import { Updateusers } from '../State/Actions/userActions';
 })
 export class EditProfileComponent {
   faArrowLeft = faArrowLeft;
-  newUser: NewUser = {
-   
-    userName: '',
-    email: '',
-    password: '',
-  
-  };
+  form!: NgForm;
 
   constructor(private userService: UserServiceService,private store:Store<AppState>) {}
 
   onSubmit(form: NgForm) {
-    // console.log(form.value);
-    // this.userService.updateUser(form.value).subscribe(
-    //   (response: addUserSuccess) => {
-    //     console.log(response);
-    
-    //   },
-    //   error => {
-    //     console.error(error);
-   
-    //   }
-    // );
-
-this.store.dispatch(Updateusers({updatedUser:this.newUser}))
-    
+    this.form = form;
+    this.store.dispatch(Updateusers({updatedUser:this.form.value}));
   }
-
- 
 }
-
-
-
-

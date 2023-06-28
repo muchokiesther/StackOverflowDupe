@@ -18,3 +18,8 @@ export const UpdateusersFailure = createAction('[User]-Update usersFailure', pro
 export const Userlogin= createAction('[User] loginUser',props<{user:LoginUser}>())  
 export const UserloginSuccess= createAction('[User]-loginuserSuccess', props<{message:string}>())
 export const UserloginFailure= createAction('[User]-loginuserFailure',props<{message:string}>())
+
+
+export const deleteuser = createAction('[User]-deleteProperty', props<{userId:string}>())
+export const deleteuserSuccess = createAction('[User]-deleteuserSuccess',props<{message:string}>())
+export const deleteuserFailure = createAction('[User]-deleteuserFailure', props<{message:string}>())

@@ -11,6 +11,8 @@ export interface UserInterface {
  updateuserfailure:string 
  loginusersuccess:string 
  loginuserfailure:string 
+ deleteusersuccess:string 
+ deleteuserfailure:string 
 }
 
 const initialState: UserInterface = {
@@ -21,7 +23,9 @@ const initialState: UserInterface = {
  updateusersuccess:'',
   updateuserfailure:'',
  loginusersuccess:'',
-  loginuserfailure:''
+  loginuserfailure:'',
+  deleteusersuccess:'' ,
+  deleteuserfailure:'' 
 };
 
 //selectors
@@ -88,7 +92,21 @@ return{
                          loginuserfailure:action.message,
                            loginusersuccess:''
                             }
-                              }) 
+                              }) ,
+                              on(UserActions.deleteuserSuccess , (state, action):UserInterface =>{
+                                return{
+                                    ...state,
+                                 deleteuserfailure:'',
+                                deleteusersuccess:action.message
+                                }
+                                  }),
+                                  on(UserActions.deleteuserFailure, (state, action):UserInterface =>{
+                                    return{
+                                        ...state,
+                                 deleteuserfailure:action.message,
+                                   deleteusersuccess:''
+                                    }
+                                      }) 
   
  
 

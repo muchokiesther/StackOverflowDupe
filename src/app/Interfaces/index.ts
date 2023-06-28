@@ -8,6 +8,8 @@ export interface User{
     isDeleted:number
     roles:string
     
+
+    
 }
 
 
