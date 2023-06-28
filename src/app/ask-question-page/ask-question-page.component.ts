@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, FormsModule,Validators,  ReactiveFormsModule,FormArray, FormControl } from '@angular/forms';
 import { QuestionsService } from '../services/questions.service';
 import { NewQuestion, Tag, addQuestionSuccess } from '../Interfaces';
+import { Addquestion } from '../State/Actions/questionsActions';
+import { Store } from '@ngrx/store';
+import { AppState } from '../State/appState';
 
 @Component({
   selector: 'app-ask-question-page',
@@ -15,7 +18,7 @@ import { NewQuestion, Tag, addQuestionSuccess } from '../Interfaces';
   styleUrls: ['./ask-question-page.component.css']
 })
 export class AskQuestionPageComponent implements OnInit {
-  constructor(private questionsService:QuestionsService, private fb: FormBuilder){}
+  constructor(private questionsService:QuestionsService, private fb: FormBuilder, private store:Store<AppState>){}
   form!: FormGroup
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -27,17 +30,7 @@ export class AskQuestionPageComponent implements OnInit {
   faArrowLeft = faArrowLeft;
 
   onSubmit() {
-    console.log(this.form);
-    this.questionsService.addQuestion(this.form.value).subscribe(
-      (response: addQuestionSuccess) => {
-        console.log(response);
-    
-      },
-      error => {
-        console.error(error);
-   
-      }
-    );
+    this.store.dispatch(Addquestion({newquestion:this.form.value}))
     
   }
 

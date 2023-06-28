@@ -5,11 +5,20 @@ import * as questionsActions from '../Actions/questionsActions';
 export interface QuestionsInterface {
   Questions: questions[];
   getQuestionError: string;
+  addquestionssuccess:string
+  addquestionsfailure:string
+  deletequestionfailure:string
+  deletequestionsuccess:string
+
 }
 
 const initialState: QuestionsInterface = {
    Questions: [],
-  getQuestionError: ''
+  getQuestionError: '',
+  addquestionssuccess:'',
+  addquestionsfailure:'',
+  deletequestionfailure:'',
+  deletequestionsuccess:''
 };
 
 //selectors
@@ -33,7 +42,37 @@ return{
        getQuestionError: action.errorMessage ,
        Questions: []
     }
-      })
+      }),
+      on(questionsActions.AddquestionSuccess, (state, action):QuestionsInterface =>{ 
+        return{
+            ...state,
+            addquestionsfailure:'',
+            addquestionssuccess:action.message
+        }
+          }),
+        
+          on(questionsActions.AddquestionFailure , (state, action):QuestionsInterface =>{
+            return{
+                ...state,
+                addquestionsfailure:action.message,
+               addquestionssuccess:''
+            }
+              }),
+              on(questionsActions.deletequestionSuccess, (state, action):QuestionsInterface =>{ 
+                return{
+                    ...state,
+                    deletequestionfailure:'',
+                    deletequestionsuccess:action.message
+                }
+                  }),
+                
+                  on(questionsActions.deletequestionFailure , (state, action):QuestionsInterface =>{
+                    return{
+                        ...state,
+                        deletequestionfailure:action.message,
+                        deletequestionsuccess:''
+                    }
+                      })
   
  
 

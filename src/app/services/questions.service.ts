@@ -18,9 +18,9 @@ export class QuestionsService {
   }
 
 
- deleteQuestion(questionsId: string):Observable<questions[]>{
+ deleteQuestion(questionsId: string):Observable<addQuestionSuccess>{
     let token = localStorage.getItem('token') as string
-    return this.http.delete<questions[]>(`http://localhost:4000/questions/${questionsId}`,{
+    return this.http.delete<addQuestionSuccess>(`http://localhost:4000/questions/${questionsId}`,{
       headers:new HttpHeaders().set('token',token)
     })
   }

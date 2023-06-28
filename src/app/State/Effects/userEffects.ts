@@ -80,7 +80,7 @@ loginUser$ = createEffect(() => {
   )
 })
 
-deleteProperty$ = createEffect(() => {
+deleteUser$ = createEffect(() => {
   return this.action$.pipe(
     ofType(UserActions.deleteuser),
     mergeMap(action => {

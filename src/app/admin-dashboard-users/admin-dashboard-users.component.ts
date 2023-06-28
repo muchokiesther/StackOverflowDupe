@@ -8,7 +8,7 @@ import { QuestionsService } from '../services/questions.service';
 import { AppState } from '../State/appState';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GetQuestions } from '../State/Actions/questionsActions';
+import { GetQuestions, deletequestion } from '../State/Actions/questionsActions';
 import { getQuestions } from '../State/Reducers/questionsReducer';
 
 @Component({
@@ -26,7 +26,7 @@ export class AdminDashboardUsersComponent implements OnInit {
   questions!:Observable<questions[]>
   constructor(private questionsService: QuestionsService, private router:Router,private store:Store<AppState >) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getQuestions();
   }
 
@@ -38,16 +38,7 @@ export class AdminDashboardUsersComponent implements OnInit {
   }
 
   deleteQuestion(questionsId:string){
-    console.log(questionsId);
-    this.questionsService.deleteQuestion(questionsId).subscribe(
-      (res) => {  
-        this.getQuestions()
-     //   this.router.navigate(['adminquestions'])
-        //onsole.log(res);
-      },
-    (error) => {console.log(error);
-    }
-    )
+   this.store.dispatch( deletequestion({questionsId}))
     
   }
 

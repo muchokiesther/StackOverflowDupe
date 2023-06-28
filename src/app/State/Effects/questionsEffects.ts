@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import * as questionsActions from '../Actions/questionsActions';
-import { catchError, map, mergeMap, of } from "rxjs";
+import { catchError, concatMap, map, mergeMap, of, switchMap } from "rxjs";
 import { QuestionsService } from "src/app/services/questions.service";
 @Injectable()
 
@@ -22,6 +22,40 @@ getQuestions$=createEffect(()=>{
     )
  
 })
+
+
+addQuestion$ =createEffect(()=>{
+  return this.action$.pipe(
+      ofType(questionsActions.Addquestion),
+      concatMap(action=>{
+          return this.questionsService. addQuestion(action.newquestion).pipe(
+              map(m=>questionsActions.AddquestionSuccess({message:m.message})),
+              catchError(error=>of(questionsActions.AddquestionFailure({message:error})))
+          )
+      }),
+
+      
+
+  )
+})
+
+
+
+
+
+deletQuestion$ = createEffect(() => {
+  return this.action$.pipe(
+    ofType(questionsActions.deletequestion),
+    mergeMap(action => {
+      return this.questionsService. deleteQuestion(action.questionsId).pipe(
+        map(message => questionsActions.deletequestionSuccess({ message: message.message })),
+        catchError(error => of(questionsActions.deletequestionFailure({ message: error })))
+      );
+    }),
+    // REFRESH BEHAVIOR:
+    switchMap(() => of(questionsActions.GetQuestions()))
+  );
+});
 
 }
 
