@@ -10,7 +10,6 @@ import { Store, select } from '@ngrx/store';
 import { GetUsers, deleteuser } from '../State/Actions/userActions';
 import { getUsers } from '../State/Reducers/userReducer';
 import { Observable } from 'rxjs';
-;
 
 @Component({
   selector: 'app-admin-dashboard-questions',
@@ -22,6 +21,7 @@ import { Observable } from 'rxjs';
 export class AdminDashboardQuestionsComponent implements OnInit {
   faTrash = faTrashCan;
   faArrowLeft = faArrowLeft;
+
   // users: User[] = [];
   constructor(private userService:UserServiceService, private store:Store<AppState >){}
   users!:Observable<User[]>
@@ -39,6 +39,7 @@ export class AdminDashboardQuestionsComponent implements OnInit {
 
 getUserById(userId: string) {
 this.store.dispatch(deleteuser({userId}))
+
   }
 
 }

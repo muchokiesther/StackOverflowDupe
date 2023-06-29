@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { answers } from '../Interfaces';
+import { answers, prefferedSuccess } from '../Interfaces';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,9 +17,9 @@ export class AnswersService {
     })
   }
 
-  setPreferred(answerId: string):Observable<answers []>{
+  setPreferred(answerId: string):Observable< prefferedSuccess>{
     let token = localStorage.getItem('token') as string
-    return this.http.post<answers[]>(`http://localhost:4000/answer/${answerId}`,{
+    return this.http.post< prefferedSuccess>(` http://localhost:4000/answer/prefer/${answerId}`,{},{
       headers:new HttpHeaders().set('token',token)
     })
   }

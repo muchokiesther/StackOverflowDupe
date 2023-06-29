@@ -84,7 +84,13 @@ export interface Tag{
     userId:string
     isPreferred :string
     totalVotes:number
+ 
 
+}
+
+export interface prefferedSuccess{
+    
+message:string
 }
 
 export interface comments{ 

@@ -1,6 +1,6 @@
 import {  createSelector,createFeatureSelector,createReducer, on } from '@ngrx/store';
 import { questions, votes } from 'src/app/Interfaces';
-import * as questionsActions from '../Actions/answerActions';
+import * as answerActions from '../Actions/answerActions';
 
 export interface answersInterface {
     Upvoting: votes[];
@@ -8,6 +8,8 @@ export interface answersInterface {
   addvotefailure:string
   downvotesuccess:string
   downvotefailure:string
+  setpreferredssuccess:string
+  setprefferedfailure:string
 
 
 }
@@ -17,7 +19,9 @@ const initialState: answersInterface = {
     addvotesuccess:'',
     addvotefailure:'',
     downvotesuccess:'',
-    downvotefailure:''
+    downvotefailure:'',
+    setpreferredssuccess:'',
+    setprefferedfailure:''
 
 };
 
@@ -25,14 +29,14 @@ const initialState: answersInterface = {
 
 export const answerReducer = createReducer(
   initialState,
-  on(questionsActions.upVoteSuccess, (state, action):answersInterface =>{ 
+  on(answerActions.upVoteSuccess, (state, action):answersInterface =>{ 
     return{
         ...state,
         addvotefailure:'',
         addvotesuccess:action.message
     }
       }),
-      on(questionsActions.upVoteFailure, (state, action):answersInterface =>{ 
+      on(answerActions.upVoteFailure, (state, action):answersInterface =>{ 
         return{
             ...state,
             addvotefailure:action.message,
@@ -40,20 +44,35 @@ export const answerReducer = createReducer(
         }
           }),
     
-      on(questionsActions.downvoteSuccess , (state, action):answersInterface =>{
+      on(answerActions.downvoteSuccess , (state, action):answersInterface =>{
         return{
             ...state,
             downvotefailure:action.message,
             downvotesuccess:''
         }
           }),
-          on(questionsActions.downvoteFailure , (state, action):answersInterface =>{
+          on(answerActions.downvoteFailure , (state, action):answersInterface =>{
             return{
                 ...state,
                 addvotefailure:action.message,
                 downvotesuccess:''
             }
               }),
+
+              on(answerActions.setPreferredAnswerSuccess , (state, action):answersInterface =>{
+                return{
+                    ...state,
+                   setprefferedfailure:'',
+                    setpreferredssuccess:action.message
+                }
+                  }),
+                  on(answerActions.setPreferredAnswerFailure , (state, action):answersInterface =>{
+                    return{
+                        ...state,
+                       setprefferedfailure:action.message,
+                        setpreferredssuccess:''
+                    }
+                      })
 
           
 

@@ -1,4 +1,8 @@
-<!-- <app-sign-up></app-sign-up> -->
-<!-- <app-login></app-login> -->
-<!-- <app-landing-page></app-landing-page> -->
+
+
+<!-- <button (click)="showError()">Show Error</button> -->
+<app-error-component *ngIf="message" [message]="message" (close)="close()"></app-error-component>
+
+
+
 <router-outlet></router-outlet>

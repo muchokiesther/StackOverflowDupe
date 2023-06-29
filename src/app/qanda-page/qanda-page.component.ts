@@ -15,7 +15,7 @@ import { Store } from '@ngrx/store';
 import { upVote } from '../State/Actions/answerActions';
 import { downvote } from '../State/Actions/answerActions';
 
-
+import * as answerActions from '../State/Actions/answerActions';
 @Component({
   selector: 'app-qanda-page',
   standalone: true,
@@ -31,6 +31,8 @@ export class QandaPageComponent implements OnInit {
   questionsId!: string; 
   answerId!:string
   showCommentbar= false;
+  showComment = false;
+  isAnswerPreferred: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -73,6 +75,8 @@ export class QandaPageComponent implements OnInit {
       }
     );
 
+    const storedAnswerPreferred = localStorage.getItem('answerPreferred');
+    this.isAnswerPreferred = storedAnswerPreferred === 'true';
   }
 
   onSubmit(form: NgForm) {
@@ -130,6 +134,14 @@ viewComments()
     }
   );
 
+  }
+
+
+  setAnswerAsPreferred(answerId: string) {
+    this.isAnswerPreferred = !this.isAnswerPreferred; // Toggle the checkbox state
+    localStorage.setItem('answerPreferred', this.isAnswerPreferred.toString()); // Store the checkbox state in localStorage
+
+    this.store.dispatch(answerActions.setPreferredAnswer({ answerId }));
   }
 
 

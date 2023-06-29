@@ -6,7 +6,7 @@ import { faArrowLeft, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icon
 import { AuthService } from '../services/auth.service';
 import { AppState } from '../State/appState';
 import { Store, select } from '@ngrx/store';
-import { GetUserQuestions } from '../State/Actions/questionsActions';
+import { GetUserQuestions, deletequestion } from '../State/Actions/questionsActions';
 import { Observable } from 'rxjs';
 import { questions } from '../Interfaces';
 
@@ -30,7 +30,10 @@ export class UserProfileComponent {
     this.questions = this.store.select(state=>state.question.Questions) 
   }
 
-
+  deleteQuestion(questionsId:string){
+    this.store.dispatch( deletequestion({questionsId}))
+     
+   }
  
 
   togglePreviouslyAnswered() {

@@ -12,3 +12,8 @@ export const upVoteFailure = createAction('[answer]-upvoteFailure', props<{messa
 export const downvote = createAction('[answer]-Adddownvote', props<{answerId:string}>())
 export const downvoteSuccess = createAction('[answer]-AdddownvoteSuccess',props<{message:string}>())
 export const downvoteFailure = createAction('[answer]-AdddownvoteFailure', props<{message:string}>())
+
+
+export const setPreferredAnswer = createAction('[answer] SetPreferredAnswer', props<{ answerId: string }>());
+export const setPreferredAnswerSuccess = createAction('[answer] SetPreferredAnswerSuccess', props<{ message: string }>());
+export const setPreferredAnswerFailure = createAction('[answer] SetPreferredAnswerFailure', props<{ message: string }>());

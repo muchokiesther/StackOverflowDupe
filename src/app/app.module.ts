@@ -14,6 +14,8 @@ import { questionsReducer } from './State/Reducers/questionsReducer';
 import { QuestionsEffects } from './State/Effects/questionsEffects';
 import { answerReducer } from './State/Reducers/answerReducers';
 import { AnswerEffects } from './State/Effects/answerEffects';
+import { ErrorComponentComponent } from './error-component/error-component.component';
+import { DeleteMessageComponentComponent } from './delete-message-component/delete-message-component.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { AnswerEffects } from './State/Effects/answerEffects';
     StoreModule.forRoot({user:userReducer , question:questionsReducer, answer:answerReducer}, {}),
     EffectsModule.forRoot([UserEffects,QuestionsEffects,AnswerEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    ErrorComponentComponent,
+    DeleteMessageComponentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
