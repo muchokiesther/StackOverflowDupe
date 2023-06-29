@@ -22,7 +22,8 @@ import { getQuestions } from '../State/Reducers/questionsReducer';
 export class AdminDashboardUsersComponent implements OnInit {
   faTrash = faTrashCan;
   faArrowLeft = faArrowLeft;
-
+  isUserDeleted = false;
+  showSuccessMessage = false;
   questions!:Observable<questions[]>
   constructor(private questionsService: QuestionsService, private router:Router,private store:Store<AppState >) { }
 
@@ -39,11 +40,21 @@ export class AdminDashboardUsersComponent implements OnInit {
 
   deleteQuestion(questionsId:string){
    this.store.dispatch( deletequestion({questionsId}))
+
+   this.showSuccessMessage = true;
+    setTimeout(() => {
+      this.hideSuccessMessage();
+    }, 1500);
+  }
+
+  hideSuccessMessage() {
+    this.showSuccessMessage = false;
+  }
     
   }
 
   
 
 
-}
+
 

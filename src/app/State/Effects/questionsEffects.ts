@@ -3,10 +3,11 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import * as questionsActions from '../Actions/questionsActions';
 import { catchError, concatMap, map, mergeMap, of, switchMap } from "rxjs";
 import { QuestionsService } from "src/app/services/questions.service";
+import { Router } from "@angular/router";
 @Injectable()
 
 export class QuestionsEffects{
-constructor(private action$:Actions,  private questionsService:QuestionsService){}
+constructor(private action$:Actions,  private questionsService:QuestionsService,private router: Router){}
 
 getQuestions$=createEffect(()=>{
     return this.action$.pipe(

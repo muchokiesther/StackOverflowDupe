@@ -1,13 +1,12 @@
 <div class="maincontainer">
-  <div class="container"  >
-
+  <div class="container">
     <div class="three">
       <header>
         <div class="logo">
           <img src="../../assets/logo.svg"><span>StackOverflow Dupe</span>
         </div>
         <div class="searchbar">
-          <input type="search" id="searchbar" name="myInput" placeholder="Search">
+          <input type="search" id="searchbar" name="myInput" placeholder="Search" [(ngModel)]="searchText">
         </div>
         <div class="hamburger-menu" (click)="showSidebar = !showSidebar">
           <div class="line"></div>
@@ -15,30 +14,27 @@
           <div class="line"></div>
         </div>
         <div class="profile">
-          <button [routerLink]="['/profile']" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" >PROFILE</button>
+          <button [routerLink]="['/profile']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">PROFILE</button>
         </div>
-     
       </header>
     </div>
 
-    
-
-    <div  class=" four sidebar" >
+    <div class="four sidebar">
       <div class="leftbtn">
         <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
-        <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
+        <button class="viewquesbtn" [routerLink]="['/allquestions']">View Questions</button><br>
         <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
       </div>
     </div>
 
-    <div  class="four"  [hidden]="!showSidebar">
+    <div class="four" [hidden]="!showSidebar">
       <div class="leftbtn">
         <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
-        <button class="viewquesbtn"  [routerLink]="['/allquestions']">View Questions</button><br>
+        <button class="viewquesbtn" [routerLink]="['/allquestions']">View Questions</button><br>
         <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
       </div>
     </div>
-   
+
     <div class="five">
       <div class="question-container">
         <p>QUESTIONS FILTERED FROM THE TOP</p>
@@ -46,51 +42,42 @@
 
         <div class="question">
           <div class="question-info">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
-              laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
-            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!</p>
             <button class="Qtag">HTML</button>
             <div class="votes">
               <!-- <button class="vote-button">▲</button>
               <button class="vote-button">▼</button>
               <span class="vote-count">0 votes</span> -->
               <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
-
             </div>
-       
           </div>
           <div class="question-info">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non
-              laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!
-            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!</p>
             <button class="Qtag">HTML</button>
             <div class="votes">
               <!-- <button class="vote-button">▲</button>
               <button class="vote-button">▼</button>
               <span class="vote-count">0 votes</span> -->
               <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
-
             </div>
             <p class="view-more" [routerLink]="['/q&a']">View more</p>
           </div>
-          <div class="question-info" *ngFor="let question of questions |async">
-            <h3>{{ question.title }}</h3>
+          <div class="question-info" *ngFor="let question of questions | async">
+            <ng-container *ngIf="searchText === '' || question.title.toLowerCase().includes(searchText.toLowerCase()) || question.body.toLowerCase().includes(searchText.toLowerCase())">
+              <h3>{{ question.title }}</h3>
               <p>{{ question.body }}</p>
-              <p>{{question.tagNames}}</p>
-            <!-- <button class="Qtag">HTML</button> -->
-            <div class="votes">
-              <!-- <button class="vote-button">▲</button>
-              <button class="vote-button">▼</button>
-              <span class="vote-count">0 votes</span> -->
-              <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
-
-            </div>
-            <p class="view-more" [routerLink]="['/q&a/']+question.questionsId">View more</p>
+              <p>{{ question.tagNames }}</p>
+              <!-- ... other question details ... -->
+              <p class="view-more" [routerLink]="['/q&a/'] + question.questionsId">View more</p>
+            </ng-container>
+          </div>
+          <div class="no-results" *ngIf="(questions | async)?.length === 0 && searchText !== ''">
+            <p>No results found.</p>
           </div>
         </div>
-
       </div>
     </div>
+    
     <div class="six">
       <div class="watched-tags-container">
         <button class="watched-tags-button" [routerLink]="['/tags']">VIEW SUCH TAGS</button> <br>
@@ -102,6 +89,7 @@
         </div>
       </div>
     </div>
+    
     <div class="seven">
       <div class="sponsors">
         <p>OUR SPONSORS</p>
@@ -111,7 +99,5 @@
         <p>We provide the support to the tech industry</p>
       </div>
     </div>
-
-
   </div>
 </div>

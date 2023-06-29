@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginUserSuccess } from '../Interfaces';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { LoginUserSuccess } from '../Interfaces';
 export class AuthService {
   role!: string | null 
   token!: string | null 
-      constructor() { 
+      constructor(private router:Router) { 
     
       }
     
@@ -19,6 +20,7 @@ export class AuthService {
   
      logout(){
       localStorage.clear()
+      this.router.navigateByUrl('/login');
      }
   
      isloggedIn(){

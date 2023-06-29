@@ -11,31 +11,30 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../State/appState';
 import { Observable } from 'rxjs';
 import { getQuestions } from '../State/Reducers/questionsReducer';
+import { FormsModule } from '@angular/forms'; // Add this line
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule,RouterModule,FontAwesomeModule],
+  imports: [CommonModule, RouterModule, FontAwesomeModule, FormsModule], // Include FormsModule here
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
 
-  showSidebar= false;
+  showSidebar = false;
+  searchText: string = ''; // Add this line
 
-
-
-  constructor(private store:Store<AppState >){}
+  constructor(private store: Store<AppState>) { }
   
   ngOnInit() {
     this.getQuestions();
   }
-questions!:Observable<questions[]>
+
+  questions!: Observable<questions[]>;
 
   getQuestions() {
-
-    this.store.dispatch(GetQuestions())
-    this.questions = this.store.pipe(select(getQuestions))
-
+    this.store.dispatch(GetQuestions());
+    this.questions = this.store.pipe(select(getQuestions));
   }
 }
