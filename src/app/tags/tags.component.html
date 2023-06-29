@@ -9,7 +9,8 @@
   <div class="container">
     <div class="container1" *ngFor="let question of filteredQuestions">
       <button>{{ question.tagNames }}</button>
-      <p>{{ question.body }}</p>
+      <p>{{ question.title }}</p>
+      <p class="view-more" [routerLink]="['/q&a/'] + question.questionsId">View more</p>
     </div>
   </div>
 </div>

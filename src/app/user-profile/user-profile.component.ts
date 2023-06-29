@@ -36,7 +36,7 @@ export class UserProfileComponent {
    }
  
 
-  togglePreviouslyAnswered() {
-    this.showPreviouslyAnswered = !this.showPreviouslyAnswered;
-  }
+  // togglePreviouslyAnswered() {
+  //   this.showPreviouslyAnswered = !this.showPreviouslyAnswered;
+  // }
 }
