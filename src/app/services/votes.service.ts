@@ -12,7 +12,7 @@ export class VotesService {
 
   upVote(answerId: string):Observable<votesSuccess>{
     let token = localStorage.getItem('token') as string
-    return this.http.post<votesSuccess>(`http://localhost:4000//votes/upvote/${answerId}`,{
+    return this.http.post<votesSuccess>(`http://localhost:4000/votes/upvote/${answerId}`,{},{
       headers:new HttpHeaders().set('token',token)
     })
   }
@@ -21,7 +21,7 @@ export class VotesService {
   
   downVote(answerId: string):Observable<votesSuccess>{
     let token = localStorage.getItem('token') as string
-  return  this.http.post<votesSuccess>(`http://localhost:4000//votes/downvote/${answerId}`,{
+  return  this.http.post<votesSuccess>(`http://localhost:4000/votes/downvote/${answerId}`,{},{
       headers:new HttpHeaders().set('token',token)
     })
   }

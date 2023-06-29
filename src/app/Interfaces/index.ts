@@ -82,7 +82,7 @@ export interface Tag{
     body:string
     userId:string
     isPreferred :string
-    total_votes:number
+    totalVotes:number
 
 }
 

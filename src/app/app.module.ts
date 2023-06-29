@@ -12,6 +12,8 @@ import {userReducer} from './State/Reducers/userReducer'
 import { UserEffects } from './State/Effects/userEffects';
 import { questionsReducer } from './State/Reducers/questionsReducer';
 import { QuestionsEffects } from './State/Effects/questionsEffects';
+import { answerReducer } from './State/Reducers/answerReducers';
+import { AnswerEffects } from './State/Effects/answerEffects';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,8 @@ import { QuestionsEffects } from './State/Effects/questionsEffects';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    StoreModule.forRoot({user:userReducer , question:questionsReducer}, {}),
-    EffectsModule.forRoot([UserEffects,QuestionsEffects]),
+    StoreModule.forRoot({user:userReducer , question:questionsReducer, answer:answerReducer}, {}),
+    EffectsModule.forRoot([UserEffects,QuestionsEffects,AnswerEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],

@@ -10,6 +10,10 @@ import { QuestionsService } from '../services/questions.service';
 import { answers, comments, questions } from '../Interfaces';
 import { Observable } from 'rxjs';
 import { AnswersService } from '../services/answers.service';
+import { AppState } from '../State/appState';
+import { Store } from '@ngrx/store';
+import { upVote } from '../State/Actions/answerActions';
+import { downvote } from '../State/Actions/answerActions';
 
 
 @Component({
@@ -32,7 +36,8 @@ export class QandaPageComponent implements OnInit {
     private route: ActivatedRoute,
     private commentsService: CommentsService,
     private questionsService: QuestionsService,
-    private answerService:AnswersService
+    private answerService:AnswersService,
+   private store:Store<AppState>
   ) {}
 
   questions!:questions
@@ -82,9 +87,18 @@ export class QandaPageComponent implements OnInit {
    
       }
     );
+
+  
     
   }
+  upvote(answerId: string) {
+    this.store.dispatch(upVote({ answerId: answerId }));
+  }
 
+  downvote(answerId: string) {
+    this.store.dispatch(downvote({ answerId: answerId }));
+  }
+  
   sendComments(value: string, answerId: string) {
     console.log(value);
     console.log(answerId);

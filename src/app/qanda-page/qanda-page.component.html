@@ -25,9 +25,9 @@
               <fa-icon class="icon" [icon]=" faComment" (click)=" showCommentbar = !showCommentbar"></fa-icon>
             </div>
             <div class="votealign">
-              <span class="vote-count">0 votes</span>
-              <button class="vote-button">▲</button>
-              <button class="vote-button">▼</button> 
+              <span class="vote-count">{{answers. totalVotes}}</span>
+              <button class="vote-button" (click)="upvote(answers.answerId)" >▲</button>
+              <button class="vote-button" (click)="downvote(answers.answerId)" >▼</button> 
             </div> 
           </div>
         </div>
