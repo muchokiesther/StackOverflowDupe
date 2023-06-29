@@ -37,7 +37,7 @@ export class QuestionsService {
     updateQuestion(newQuestion: NewQuestion, questionsId: string): Observable<addQuestionSuccess> {
       let token = localStorage.getItem('token') as string;
       console.log(newQuestion);
-      return this.http.post<addQuestionSuccess>(`http://localhost:4000/questions/${questionsId}`, newQuestion, {
+      return this.http.put<addQuestionSuccess>(`http://localhost:4000/questions/${questionsId}`, newQuestion, {
         headers: new HttpHeaders().set('token', token)
       });
     }
@@ -50,9 +50,9 @@ export class QuestionsService {
         })
       }
 
-      getQuestionsByUserId(userId:string):Observable<questions>{
+      getQuestionsByUserId():Observable<questions[]>{
         let token = localStorage.getItem('token') as string
-        return this.http.get<questions>(`http://localhost:4000/questions/${userId}`,{
+        return this.http.get<questions[]>(`http://localhost:4000/questions/user/question`,{
           headers:new HttpHeaders().set('token',token)
         })
       }

@@ -41,7 +41,7 @@ addUser$ = createEffect(()=>{
 })
 
 
-updateProperty$ = createEffect(()=>{
+updateUsersy$ = createEffect(()=>{
 return this.action$.pipe(
   ofType(UserActions.Updateusers),
   mergeMap(action=>{

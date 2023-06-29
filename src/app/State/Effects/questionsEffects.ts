@@ -34,8 +34,6 @@ addQuestion$ =createEffect(()=>{
           )
       }),
 
-      
-
   )
 })
 
@@ -56,6 +54,40 @@ deletQuestion$ = createEffect(() => {
     switchMap(() => of(questionsActions.GetQuestions()))
   );
 });
+
+
+getUsersQuestions$ = createEffect(() =>
+  this.action$.pipe(
+    ofType(questionsActions.GetUserQuestions),
+    mergeMap(() =>
+      this.questionsService.getQuestionsByUserId().pipe(
+        map((Questions) => questionsActions.GetUserQuestionsSuccess({ Questions })),
+        catchError(error => of(questionsActions.GetUserQuestionsFailure({ errorMessage: error })))
+      )
+    )
+  )
+)
+
+updatequestion$ = createEffect(()=>{
+  return this.action$.pipe(
+    ofType(questionsActions.Updatequestion),
+    mergeMap(action=>{
+      return this.questionsService.updateQuestion(action.newquestion,action.questionsId).pipe(
+        map(message=>questionsActions.UpdatequestionSuccess({message:message.message})),
+        catchError(error=>of(questionsActions.UpdatequestionFailure({message:error})))
+      )
+    }),
+    
+      //REFRESH BEHAVIOUR:
+      // switchMap(() => of(UserActions.Updateusers()))
+  
+  )
+  }) 
+
+
+
+
+
 
 }
 

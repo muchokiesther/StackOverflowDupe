@@ -76,8 +76,8 @@
           <div class="question-info" *ngFor="let question of questions |async">
             <h3>{{ question.title }}</h3>
               <p>{{ question.body }}</p>
-              <p>{{question.TAGS}}</p>
-            <button class="Qtag">HTML</button>
+              <p>{{question.tagNames}}</p>
+            <!-- <button class="Qtag">HTML</button> -->
             <div class="votes">
               <!-- <button class="vote-button">▲</button>
               <button class="vote-button">▼</button>

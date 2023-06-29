@@ -15,7 +15,7 @@ const routes: Routes = [
 
  {path:'editprofile',loadComponent:()=> import("./edit-profile/edit-profile.component").then(c=>c.EditProfileComponent)},
 
- {path:'editquestion',loadComponent:()=> import("./edit-question/edit-question.component").then(c=>c.EditQuestionComponent)},
+ {path:'editquestion/:questionsId',loadComponent:()=> import("./edit-question/edit-question.component").then(c=>c.EditQuestionComponent)},
 
  {path:'tags',loadComponent:()=> import("./tags/tags.component").then(c=>c.TagsComponent)},
 

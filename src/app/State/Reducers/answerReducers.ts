@@ -21,10 +21,7 @@ const initialState: answersInterface = {
 
 };
 
-//selectors
-// export const getQuestionState = createFeatureSelector<answersInterface>('answer')
-// export  const getQuestions = createSelector(getQuestionState,(state)=>state.Upvoting)
-// export const  getPropError = createSelector(getQuestionState,(state)=>state.getQuestionError)
+
 
 export const answerReducer = createReducer(
   initialState,

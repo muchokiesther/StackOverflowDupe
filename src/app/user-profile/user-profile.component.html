@@ -1,61 +1,37 @@
 <div class="container">
- 
   <div class="profile-container">
-  
     <div class="profile-info">
-    
- 
       <div class="question-buttons">
         <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/home']"></fa-icon>
         <button class="question-type">Previously asked Questions</button>
-        <button class="question-type" (click)="togglePreviouslyAnswered()">Previously answered questions </button>
+        <button class="question-type" (click)="togglePreviouslyAnswered()">Previously answered questions</button>
       </div>
     </div>
     <div class="posted-questions">
-      <h2 *ngIf="authservice.isloggedIn()" >{{authservice.getuserName()}}</h2>
-      <button class="edit-profile" [routerLink]="['/editprofile']"> 
+      <h2 *ngIf="authservice.isloggedIn()">{{ authservice.getuserName() }}</h2>
+      <button class="edit-profile" [routerLink]="['/editprofile']">
         <fa-icon [icon]="faPen"></fa-icon>
         EDIT PROFILE
+      </button>
+      <button class="logout" *ngIf="authservice.isloggedIn()" (click)="authservice.logout()">LOG OUT</button>
 
-      </button>  
-      <button class="logout" *ngIf=" authservice.isloggedIn()" (click)="authservice.logout()">LOG OUT</button>
-  
-      
-     
-   
       <h3>Your Posted Questions:</h3>
-      <div class="question">
-        <p>Why won't image go to code?</p>
-        
+      <div class="question" *ngFor="let question of questions | async">
+        <h3>{{ question.title }}</h3>
+        <p>{{ question.body }}</p>
         <span class="votes">10 Votes</span>
-    <div  class="iconing">
-      <fa-icon class="icon" [icon]="faTrash"></fa-icon>
-        <button class="edit" [routerLink]="['/editquestion']">EDIT</button>
-       
-      </div>
-      </div>
-      <div class="question">
-        <p>How to put a hamburger menu</p>
-      
-        <span class="votes">11 Votes</span>
-       
         <div class="iconing">
           <fa-icon class="icon" [icon]="faTrash"></fa-icon>
-          <button class="edit" [routerLink]="['/editquestion']">EDIT</button>
-        
+          <button class="edit" [routerLink]="['/editquestion/'+question.questionsId]">EDIT</button>
         </div>
       </div>
       <h3 *ngIf="showPreviouslyAnswered">Previously answered Questions:</h3>
       <div class="question" *ngIf="showPreviouslyAnswered">
         <p>You need to align your flex using align content and specify center</p>
-        <div  class="iconing">
+        <div class="iconing">
           <fa-icon class="icons" [icon]="faTrash"></fa-icon>
-  
-          </div>
+        </div>
       </div>
-
-
     </div>
   </div>
-
 </div>
