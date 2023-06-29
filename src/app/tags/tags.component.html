@@ -1,45 +1,15 @@
-<div class ="maincontainer">
+<div class="maincontainer">
   <fa-icon class="arrow-icon" [icon]="faArrowLeft" [routerLink]="['/home']"></fa-icon>
-<h2 class="title">Tags</h2>
-<p class="text">A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.</p>
+  <h2 class="title">Tags</h2>
+  <p class="text">A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.</p>
 
-    <input type="search" id="searchbar" name="myInput" placeholder="Search">
+  <input type="search" id="searchbar" name="myInput" placeholder="Search" [(ngModel)]="searchText" (input)="filterQuestions()">
   <button class="filter">FILTER BY TAG</button>
- 
 
-    <div class="container">
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
+  <div class="container">
+    <div class="container1" *ngFor="let question of filteredQuestions">
+      <button>{{ question.tagNames }}</button>
+      <p>{{ question.body }}</p>
+    </div>
   </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div >
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-  <div class="container1">
-    <button>HTML</button>
-    <p>How can I center align a div element horizontally and vertically using CSS?</p>
-  </div>
-
-</div>
 </div>

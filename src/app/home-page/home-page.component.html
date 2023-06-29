@@ -41,32 +41,12 @@
         <button class="askQuestion" [routerLink]="['/askquestion']">ASK A QUESTION</button>
 
         <div class="question">
-          <div class="question-info">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!</p>
-            <button class="Qtag">HTML</button>
-            <div class="votes">
-              <!-- <button class="vote-button">▲</button>
-              <button class="vote-button">▼</button>
-              <span class="vote-count">0 votes</span> -->
-              <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
-            </div>
-          </div>
-          <div class="question-info">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nostrum amet ea quibusdam non laborum aperiam dolorum numquam quasi ab. Id non ipsum voluptates quibusdam sed ab, iusto blanditiis ea!</p>
-            <button class="Qtag">HTML</button>
-            <div class="votes">
-              <!-- <button class="vote-button">▲</button>
-              <button class="vote-button">▼</button>
-              <span class="vote-count">0 votes</span> -->
-              <!-- <fa-icon [icon]="faTrash"></fa-icon> -->
-            </div>
-            <p class="view-more" [routerLink]="['/q&a']">View more</p>
-          </div>
+       
           <div class="question-info" *ngFor="let question of questions | async">
             <ng-container *ngIf="searchText === '' || question.title.toLowerCase().includes(searchText.toLowerCase()) || question.body.toLowerCase().includes(searchText.toLowerCase())">
               <h3>{{ question.title }}</h3>
               <p>{{ question.body }}</p>
-              <p>{{ question.tagNames }}</p>
+              <button class="Qtag">{{ question.tagNames }}</button>
               <!-- ... other question details ... -->
               <p class="view-more" [routerLink]="['/q&a/'] + question.questionsId">View more</p>
             </ng-container>
