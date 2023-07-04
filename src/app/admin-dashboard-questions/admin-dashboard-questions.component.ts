@@ -11,28 +11,35 @@ import { GetUsers, deleteuser } from '../State/Actions/userActions';
 import { getUsers } from '../State/Reducers/userReducer';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../Pipes/filterpipe.pipe';
 
 @Component({
-  selector: 'app-admin-dashboard-questions',
-  standalone: true,
-  imports: [CommonModule,FontAwesomeModule,RouterModule],
-  templateUrl: './admin-dashboard-questions.component.html',
-  styleUrls: ['./admin-dashboard-questions.component.css']
+    selector: 'app-admin-dashboard-questions',
+    standalone: true,
+    templateUrl: './admin-dashboard-questions.component.html',
+    styleUrls: ['./admin-dashboard-questions.component.css'],
+    imports: [CommonModule, FontAwesomeModule, RouterModule, FormsModule, FilterPipe]
 })
 export class AdminDashboardQuestionsComponent implements OnInit {
   faTrash = faTrashCan;
   faArrowLeft = faArrowLeft;
   isUserDeleted = false;
   showSuccessMessage = false;
-  // users: User[] = [];
-  constructor(private userService:UserServiceService, private store:Store<AppState >,public authservice: AuthService,private router:Router){}
-  users!:Observable<User[]>
-  ngOnInit(): void {
-  this.loadUsers();
- 
-  }
+  searchTerm: string = '';
 
-  
+  constructor(
+    private userService: UserServiceService,
+    private store: Store<AppState>,
+    public authservice: AuthService,
+    private router: Router
+  ) {}
+
+  users!: Observable<User[]>;
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
 
   loadUsers() {
     this.store.dispatch(GetUsers());
@@ -52,7 +59,4 @@ export class AdminDashboardQuestionsComponent implements OnInit {
   hideSuccessMessage() {
     this.showSuccessMessage = false;
   }
-
-
-
 }

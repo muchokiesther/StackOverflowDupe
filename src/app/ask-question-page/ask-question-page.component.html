@@ -14,17 +14,17 @@
                 Review your question and post it to the site.</li></p>
         </div>
       
-        <label for="title">Title:</label>
+        <label for="title"></label>
         <input type="text" id="title" formControlName="title" placeholder="GIVE SOME SHORT TITLE TO YOUR QUESTION">
         <p class="error" *ngIf="form.get('title')?.invalid && form.get('title')?.touched">No empty fields*</p>
       
-        <label for="problem-details">What are the details of your problem?:</label>
+        <label for="problem-details"> </label>
         <textarea id="problem-details" formControlName="body" placeholder="Describe your problem in more detail"></textarea>
         <p class="error" *ngIf="form.get('body')?.invalid && form.get('body')?.touched">No empty fields*</p>
       
         <div formArrayName="TAGS">
-          <p>Add TAGS</p>
-          <button type="button" (click)="addtag()">ADD TAG?</button>
+     
+          <button type="button" (click)="addtag()" class="tagging">ADD TAG?</button>
           <div *ngFor="let control of getControls(); let i = index">
             <input type="text" [formControlName]="i">
             <p class="error" (click)="removetag(i)">X</p>

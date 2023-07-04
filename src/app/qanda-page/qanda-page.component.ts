@@ -39,7 +39,8 @@ export class QandaPageComponent implements OnInit {
     private commentsService: CommentsService,
     private questionsService: QuestionsService,
     private answerService:AnswersService,
-   private store:Store<AppState>
+   private store:Store<AppState>,
+  
   ) {}
 
   questions!:questions
@@ -91,6 +92,7 @@ export class QandaPageComponent implements OnInit {
    
       }
     );
+   
 
   
     
@@ -138,10 +140,12 @@ viewComments()
 
 
   setAnswerAsPreferred(answerId: string) {
-    this.isAnswerPreferred = !this.isAnswerPreferred; // Toggle the checkbox state
-    localStorage.setItem('answerPreferred', this.isAnswerPreferred.toString()); // Store the checkbox state in localStorage
+    this.isAnswerPreferred = !this.isAnswerPreferred; 
+    localStorage.setItem('answerPreferred', this.isAnswerPreferred.toString()); 
 
     this.store.dispatch(answerActions.setPreferredAnswer({ answerId }));
+
+
   }
 
 

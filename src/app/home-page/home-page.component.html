@@ -22,7 +22,7 @@
     <div class="four sidebar">
       <div class="leftbtn">
         <button class="homebtn" [routerLink]="['/home']">HOME</button> <br>
-        <button class="viewquesbtn" [routerLink]="['/allquestions']">View Questions</button><br>
+        <button class="viewquesbtn" [routerLink]="['/home']">View Questions</button><br>
         <button class="viewtagsbtn" [routerLink]="['/tags']">View tags</button><br>
       </div>
     </div>
@@ -45,7 +45,7 @@
           <div class="question-info" *ngFor="let question of questions | async">
             <ng-container *ngIf="searchText === '' || question.title.toLowerCase().includes(searchText.toLowerCase()) || question.body.toLowerCase().includes(searchText.toLowerCase())">
               <h3>{{ question.title }}</h3>
-              <p>{{ question.body }}</p>
+              <p>{{ question.body | short: 50  }}</p>
               <button class="Qtag">{{ question.tagNames }}</button>
               <!-- ... other question details ... -->
               <p class="view-more" [routerLink]="['/q&a/'] + question.questionsId">View more</p>

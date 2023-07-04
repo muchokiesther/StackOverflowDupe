@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import * as questionsActions from '../Actions/questionsActions';
-import { catchError, concatMap, map, mergeMap, of, switchMap } from "rxjs";
+import { catchError, concatMap, map, mergeMap, of, switchMap, tap } from "rxjs";
 import { QuestionsService } from "src/app/services/questions.service";
 import { Router } from "@angular/router";
 @Injectable()
@@ -34,6 +34,7 @@ addQuestion$ =createEffect(()=>{
               catchError(error=>of(questionsActions.AddquestionFailure({message:error})))
           )
       }),
+      tap(() => window.location.reload()) // Refresh the page
 
   )
 })

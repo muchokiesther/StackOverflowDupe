@@ -32,7 +32,7 @@ ngOnInit() :void {
 onSubmit() {
   this.questionsId = this.route.snapshot.params['questionsId']
   this.store.dispatch(Updatequestion({questionsId:this.questionsId,newquestion:this.form.value}))
-
+  alert('Question was successfully updates!');
   
   // if (this.form.valid) {
   //  console.log(this.form.value);

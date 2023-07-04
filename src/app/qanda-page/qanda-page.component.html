@@ -4,7 +4,7 @@
 
   <!-- Question -->
   <div class="questiondetails" *ngIf="questions">
-    <h3>{{ questions.title }}</h3>
+    <h2>{{ questions.title }}</h2>
     <p>{{ questions.body }}</p>
   </div>
 
@@ -18,20 +18,21 @@
 
 
         <div>
-          <p>{{ answer.body }}</p>
+          <h3>{{ answer.body }}</h3>
           <div class="votes">
             <div class="icons">
-              <fa-icon class="icon" [icon]="faTrophy"></fa-icon>
+              <!-- <fa-icon class="icon" [icon]="faTrophy"></fa-icon> -->
               <fa-icon class="icon" [icon]="faComment" (click)="showCommentbar = !showCommentbar"></fa-icon>
             </div>
             <div class="votealign">
-              <span class="vote-count">{{ answer.totalVotes }}</span>
+              <span class="vote-count">{{ answer.totalVotes }} votes</span>
               <button class="vote-button" (click)="upvote(answer.answerId)">▲</button>
               <button class="vote-button" (click)="downvote(answer.answerId)">▼</button>
             </div>
           </div>
         </div>
-        <div *ngFor="let comment of comments">
+        <div *ngFor="let comment of comments" class="comment">
+          <h5>COMMNETS</h5>
           <ng-container *ngIf="comment.answerId === answer.answerId">
             {{ comment.body }}
           </ng-container>

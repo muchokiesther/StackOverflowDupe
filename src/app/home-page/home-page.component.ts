@@ -12,18 +12,20 @@ import { AppState } from '../State/appState';
 import { Observable } from 'rxjs';
 import { getQuestions } from '../State/Reducers/questionsReducer';
 import { FormsModule } from '@angular/forms'; // Add this line
+import { ShortPipe } from '../Pipes/short';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, FontAwesomeModule, FormsModule], // Include FormsModule here
+
+  imports: [CommonModule, RouterModule, FontAwesomeModule, FormsModule,ShortPipe],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
 
   showSidebar = false;
-  searchText: string = ''; // Add this line
+  searchText: string = ''; 
 
   constructor(private store: Store<AppState>) { }
   

@@ -26,5 +26,6 @@ export class EditProfileComponent {
   onSubmit(form: NgForm) {
     this.form = form;
     this.store.dispatch(Updateusers({updatedUser:this.form.value}));
+    alert('Update was successfull!');
   }
 }

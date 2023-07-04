@@ -31,6 +31,7 @@ export class AskQuestionPageComponent implements OnInit {
 
   onSubmit() {
     this.store.dispatch(Addquestion({newquestion:this.form.value}))
+    alert('Question added successfully!');
     
   }
 

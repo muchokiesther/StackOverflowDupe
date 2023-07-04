@@ -1,0 +1,7 @@
+<div class="custom-error" (close)="closed()" *ngIf="message">
+    <div class="inside-error">
+      <p>{{message}}</p>
+      <button (click)="closed()">Close</button>
+    </div>
+  </div>
+  

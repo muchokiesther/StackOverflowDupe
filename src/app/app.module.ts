@@ -16,11 +16,14 @@ import { answerReducer } from './State/Reducers/answerReducers';
 import { AnswerEffects } from './State/Effects/answerEffects';
 import { ErrorComponentComponent } from './error-component/error-component.component';
 import { DeleteMessageComponentComponent } from './delete-message-component/delete-message-component.component';
+import { FilterPipe } from './Pipes/filterpipe.pipe';
+import { ErrormessagesComponent } from './errormessages/errormessages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShortPipe,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,11 @@ import { DeleteMessageComponentComponent } from './delete-message-component/dele
     EffectsModule.forRoot([UserEffects,QuestionsEffects,AnswerEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     ErrorComponentComponent,
-    DeleteMessageComponentComponent
+    DeleteMessageComponentComponent,
+   FilterPipe,
+   ShortPipe,
+   ErrormessagesComponent
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

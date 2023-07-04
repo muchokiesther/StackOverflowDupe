@@ -75,6 +75,12 @@ button[type="submit"]:hover {
 .error{
     color: red;
 }
+
+.tagging{
+    padding:10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
 @media screen and (max-width: 768px) {
     .questionarea {
       width: 90%;

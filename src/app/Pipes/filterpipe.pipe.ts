@@ -13,7 +13,7 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return items.filter(item => {
-      // Modify this condition according to your specific filtering requirements
+
       return item.userName.toLowerCase().includes(searchText);
     });
   }
