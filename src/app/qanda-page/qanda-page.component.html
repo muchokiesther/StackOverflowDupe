@@ -14,11 +14,14 @@
     <div class="section2">
       <div class="answersection" *ngFor="let answer of answers">
     <!-- Example checkbox -->
-    <input type="checkbox" [(ngModel)]="isAnswerPreferred" (change)="setAnswerAsPreferred(answer.answerId)" />
+   
 
 
         <div>
+          <div class ="answerss">
           <h3>{{ answer.body }}</h3>
+          <input type="checkbox" [(ngModel)]="isAnswerPreferred" (change)="setAnswerAsPreferred(answer.answerId)" />
+        </div>
           <div class="votes">
             <div class="icons">
               <!-- <fa-icon class="icon" [icon]="faTrophy"></fa-icon> -->

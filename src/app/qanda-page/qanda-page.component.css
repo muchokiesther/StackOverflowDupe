@@ -60,7 +60,9 @@ p {
 
 .votealign {
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
+  margin-left: 40rem;
 }
 
 .vote-count {
@@ -128,4 +130,9 @@ button {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+.answerss{
+  display: flex;
+  flex-direction: row;
+gap:1rem;
 }
