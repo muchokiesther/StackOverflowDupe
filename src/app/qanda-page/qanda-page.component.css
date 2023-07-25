@@ -83,22 +83,26 @@ p {
   background-color: #f9f9f9;
 }
 
+
 .commentsection {
+  display: flex;
+  align-items: center;
   margin-top: 10px;
+  position: relative; /* Use relative positioning to control the icon's position */
 }
 
 #comment {
-  width: 100%;
+  flex: 1; /* Expand the input to fill available space */
   padding: 5px;
-  margin-top: 5px;
-  display: block;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .send-icon {
-  margin-top: 10px;
-  font-size: 15px;
-  color: #333;
+  position: absolute; /* Position the icon absolutely within the .commentsection */
+  right: 5px; /* Adjust the right positioning as needed */
+  font-size: 20px;
+  color: #007bff; /* Set the icon color */
   cursor: pointer;
 }
 
