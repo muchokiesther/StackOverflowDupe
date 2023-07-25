@@ -101,8 +101,8 @@ p {
 .send-icon {
   position: absolute; /* Position the icon absolutely within the .commentsection */
   right: 5px; /* Adjust the right positioning as needed */
-  font-size: 20px;
-  color: #007bff; /* Set the icon color */
+  font-size: 15.5px;
+  color: #000000; /* Set the icon color */
   cursor: pointer;
 }
 
