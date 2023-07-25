@@ -47,13 +47,13 @@
             name="body"
             placeholder="Enter your comment here"
             required
-            [hidden]="!showCommentbar"
+          
             #body
           />
           <fa-icon
             class="send-icon"
             [icon]="faPaperPlane"
-            [hidden]="!showCommentbar"
+          
             (click)="sendComments(body.value, answer.answerId)"
           ></fa-icon>
         </div>
