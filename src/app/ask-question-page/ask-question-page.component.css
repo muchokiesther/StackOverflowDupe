@@ -1,99 +1,76 @@
-.container {
-    background-color: #F0F0F0;
-    min-height:100vh;
-}
+body {
+    font-family: Arial, sans-serif;
+  }
 
-form {
-    background-color: transparent; /* Set the background color to transparent */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
+  }
 
-h2 {
-    color: #000000;
-}
+  .arrow-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    margin-bottom: 10px;
+  }
 
-.questionarea {
-    background-color: lightblue;
-    padding: 10px;
-    margin-bottom: 20px;
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .questionarea {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    text-align: left;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
     padding: 10px;
-  
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-}
-
-label {
     margin-top: 10px;
-}
-
-input[type="text"],
-textarea {
-    width: 90%;
-    padding: 10px;
-    margin-top: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border-color: #BABABA;
-}
+  }
 
-button[type="submit"] {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
+  .tagging {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    cursor: pointer;
+    margin-top: 10px;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#problem-details{
-    height: 10rem;
-    border-color: #BABABA;
-}
-
-.arrow-icon {
-    font-size: 30px;
-    color: #000000;
-   cursor: pointer;
-   margin-left: 5%;
-  
   }
-.error{
+
+  .error {
     color: red;
-}
-
-.tagging{
-    padding:10px;
-    margin-bottom: 15px;
+    font-size: 12px;
+    margin: 0;
     cursor: pointer;
-}
-@media screen and (max-width: 768px) {
-    .questionarea {
-      width: 90%;
-    }
   }
-  
-  @media screen and (max-width: 480px) {
-    .questionarea {
-     min-width:60%;
-   
-    }
 
-    input::placeholder {
-        font-size: 10px; /* Replace with your desired font size */
-      }
+  button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
   }
