@@ -23,7 +23,7 @@ body {
 
   .questionarea {
     margin-top: 20px;
-    background-color: #f9f9f9;
+    background-color: #EBF4FB;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -44,7 +44,7 @@ body {
 
   .tagging {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -61,7 +61,7 @@ body {
 
   button[type="submit"] {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
     border: none;
     cursor: pointer;

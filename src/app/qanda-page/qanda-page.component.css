@@ -140,3 +140,10 @@ button:disabled {
   flex-direction: row;
 gap:1rem;
 }
+
+.icon{
+  display:flex ;
+justify-content: flex-end;
+color: #333;
+
+}
